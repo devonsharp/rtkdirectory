@@ -4,8 +4,24 @@ import { Button } from "@/components/ui/button";
 import ListingCard from "@/components/ListingCard";
 import { ArrowLeft } from "lucide-react";
 
-// Enhanced sample data with new fields
+// Enhanced sample data with new fields - reordered to put Global first
 const sampleListings = [
+  {
+    id: 4,
+    name: "GlobalRTK Pro",
+    company: "Global Positioning Solutions",
+    region: "Global",
+    continent: "global",
+    country: "Multiple",
+    email: "contact@globalrtkpro.com",
+    website: "https://globalrtkpro.com",
+    description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage.",
+    pricing: "paid" as const,
+    priceDetails: "$49.99/month",
+    coverageMapLink: "https://globalrtkpro.com/global-coverage",
+    freeTrialLink: "https://globalrtkpro.com/free-trial",
+    providerInfo: "Global network with 500+ reference stations worldwide"
+  },
   {
     id: 1,
     name: "PrecisionRTK Solutions",
@@ -53,33 +69,17 @@ const sampleListings = [
     coverageMapLink: "https://asiapacgnss.com/map",
     freeTrialLink: null,
     providerInfo: "Open-source community driven with enterprise support options"
-  },
-  {
-    id: 4,
-    name: "GlobalRTK Pro",
-    company: "Global Positioning Solutions",
-    region: "Global",
-    continent: "global",
-    country: "Multiple",
-    email: "contact@globalrtkpro.com",
-    website: "https://globalrtkpro.com",
-    description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage.",
-    pricing: "paid" as const,
-    priceDetails: "$49.99/month",
-    coverageMapLink: "https://globalrtkpro.com/global-coverage",
-    freeTrialLink: "https://globalrtkpro.com/free-trial",
-    providerInfo: "Global network with 500+ reference stations worldwide"
   }
 ];
 
 const continentNames: { [key: string]: string } = {
+  "global": "Global",
   "north-america": "North America",
   "europe": "Europe", 
   "asia": "Asia",
   "south-america": "South America",
   "africa": "Africa",
-  "oceania": "Oceania",
-  "global": "Global"
+  "oceania": "Oceania"
 };
 
 const ContinentDirectory = () => {

@@ -2,16 +2,16 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Users, Globe, Layers, Building, Code } from "lucide-react";
+import { MapPin, Users, Globe, Layers, Building, Code, BookOpen } from "lucide-react";
 
 const continents = [
+  { name: "Global", slug: "global", count: 1 },
   { name: "North America", slug: "north-america", count: 1 },
   { name: "Europe", slug: "europe", count: 1 },
   { name: "Asia", slug: "asia", count: 1 },
   { name: "South America", slug: "south-america", count: 0 },
   { name: "Africa", slug: "africa", count: 0 },
-  { name: "Oceania", slug: "oceania", count: 0 },
-  { name: "Global", slug: "global", count: 1 }
+  { name: "Oceania", slug: "oceania", count: 0 }
 ];
 
 const HomePage = () => {
@@ -56,6 +56,27 @@ const HomePage = () => {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Blog Link Section */}
+      <section className="py-12 bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex justify-center mb-4">
+            <BookOpen className="h-12 w-12 text-blue-600" />
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Stay Informed with Our RTK Knowledge Hub
+          </h2>
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Discover the latest insights, guides, and best practices for RTK correction services, 
+            GNSS technology, and precision positioning.
+          </p>
+          <Link to="/blog">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              Read Our Blog
+            </Button>
+          </Link>
         </div>
       </section>
 

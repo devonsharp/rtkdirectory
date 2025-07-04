@@ -5,10 +5,29 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Toggle } from "@/components/ui/toggle";
+import { Grid3X3, List } from "lucide-react";
 import ListingCard from "@/components/ListingCard";
+import ListingRow from "@/components/ListingRow";
 
 // Enhanced sample data with new fields
 const sampleListings = [
+  {
+    id: 4,
+    name: "GlobalRTK Pro",
+    company: "Global Positioning Solutions",
+    region: "Global",
+    continent: "global",
+    country: "Multiple",
+    email: "contact@globalrtkpro.com",
+    website: "https://globalrtkpro.com",
+    description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage.",
+    pricing: "paid" as const,
+    priceDetails: "$49.99/month",
+    coverageMapLink: "https://globalrtkpro.com/global-coverage",
+    freeTrialLink: "https://globalrtkpro.com/free-trial",
+    providerInfo: "Global network with 500+ reference stations worldwide"
+  },
   {
     id: 1,
     name: "PrecisionRTK Solutions",
@@ -56,39 +75,24 @@ const sampleListings = [
     coverageMapLink: "https://asiapacgnss.com/map",
     freeTrialLink: null,
     providerInfo: "Open-source community driven with enterprise support options"
-  },
-  {
-    id: 4,
-    name: "GlobalRTK Pro",
-    company: "Global Positioning Solutions",
-    region: "Global",
-    continent: "global",
-    country: "Multiple",
-    email: "contact@globalrtkpro.com",
-    website: "https://globalrtkpro.com",
-    description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage.",
-    pricing: "paid" as const,
-    priceDetails: "$49.99/month",
-    coverageMapLink: "https://globalrtkpro.com/global-coverage",
-    freeTrialLink: "https://globalrtkpro.com/free-trial",
-    providerInfo: "Global network with 500+ reference stations worldwide"
   }
 ];
 
 const continents = [
+  { name: "Global", slug: "global", count: 1 },
   { name: "North America", slug: "north-america", count: 1 },
   { name: "Europe", slug: "europe", count: 1 },
   { name: "Asia", slug: "asia", count: 1 },
   { name: "South America", slug: "south-america", count: 0 },
   { name: "Africa", slug: "africa", count: 0 },
-  { name: "Oceania", slug: "oceania", count: 0 },
-  { name: "Global", slug: "global", count: 1 }
+  { name: "Oceania", slug: "oceania", count: 0 }
 ];
 
 const DirectoryPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [pricingFilter, setPricingFilter] = useState("all");
   const [regionFilter, setRegionFilter] = useState("all");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   
   const filteredListings = sampleListings.filter(listing => {
     const matchesSearch = listing.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -177,14 +181,44 @@ const DirectoryPage = () => {
 
       {/* Listings */}
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          RTK Service Providers ({filteredListings.length})
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredListings.map((listing) => (
-            <ListingCard key={listing.id} listing={listing} />
-          ))}
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold text-gray-900">
+            RTK Service Providers ({filteredListings.length})
+          </h2>
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-gray-600">View:</span>
+            <Toggle
+              pressed={viewMode === "grid"}
+              onPressedChange={() => setViewMode("grid")}
+              aria-label="Grid view"
+              className="data-[state=on]:bg-blue-100 data-[state=on]:text-blue-600"
+            >
+              <Grid3X3 className="h-4 w-4" />
+            </Toggle>
+            <Toggle
+              pressed={viewMode === "list"}
+              onPressedChange={() => setViewMode("list")}
+              aria-label="List view"
+              className="data-[state=on]:bg-blue-100 data-[state=on]:text-blue-600"
+            >
+              <List className="h-4 w-4" />
+            </Toggle>
+          </div>
         </div>
+
+        {viewMode === "grid" ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredListings.map((listing) => (
+              <ListingCard key={listing.id} listing={listing} />
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {filteredListings.map((listing) => (
+              <ListingRow key={listing.id} listing={listing} />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* CTA */}
