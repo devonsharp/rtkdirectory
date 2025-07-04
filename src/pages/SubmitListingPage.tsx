@@ -13,20 +13,20 @@ const SubmitListingPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     company: "",
-    region: "",
     email: "",
-    website: "", 
-    description: ""
+    providerType: "",
+    subject: "",
+    message: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate form
-    if (!formData.name || !formData.email || !formData.region || !formData.description) {
+    // Basic validation - only check if at least one field is filled
+    if (!formData.name && !formData.company && !formData.email && !formData.subject && !formData.message) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: "Empty Form",
+        description: "Please fill in at least one field.",
         variant: "destructive",
       });
       return;
@@ -44,10 +44,10 @@ const SubmitListingPage = () => {
     setFormData({
       name: "",
       company: "",
-      region: "",
       email: "",
-      website: "",
-      description: ""
+      providerType: "",
+      subject: "",
+      message: ""
     });
   };
 
@@ -55,11 +55,11 @@ const SubmitListingPage = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Submit Your RTK Service Listing
+          Submit Your Listing
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Join the world's most comprehensive RTK correction services directory. 
-          Connect with surveyors, drone operators, and GNSS users worldwide.
+          Join the world's most comprehensive RTK directory. Whether you provide correction services 
+          or hardware solutions, connect with surveyors, drone operators, and GNSS users worldwide.
         </p>
       </div>
 
@@ -72,16 +72,15 @@ const SubmitListingPage = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <Label htmlFor="name" className="text-sm font-medium text-gray-700">
-                  Service Name *
+                  Name
                 </Label>
                 <Input
                   id="name"
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  placeholder="e.g., PrecisionRTK Solutions"
+                  placeholder="Your name"
                   className="mt-1"
-                  required
                 />
               </div>
 
@@ -94,81 +93,76 @@ const SubmitListingPage = () => {
                   type="text"
                   value={formData.company}
                   onChange={(e) => setFormData({...formData, company: e.target.value})}
-                  placeholder="e.g., PrecisionRTK Solutions LLC"
+                  placeholder="Your company name"
                   className="mt-1"
                 />
               </div>
             </div>
 
-            <div>
-              <Label htmlFor="region" className="text-sm font-medium text-gray-700">
-                Region/Continent *
-              </Label>
-              <Select onValueChange={(value) => setFormData({...formData, region: value})}>
-                <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Select your service region" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="North America">North America</SelectItem>
-                  <SelectItem value="Europe">Europe</SelectItem>
-                  <SelectItem value="Asia">Asia</SelectItem>
-                  <SelectItem value="South America">South America</SelectItem>
-                  <SelectItem value="Africa">Africa</SelectItem>
-                  <SelectItem value="Oceania">Oceania</SelectItem>
-                  <SelectItem value="Global">Global</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-                  Contact Email *
+                  Email
                 </Label>
                 <Input
                   id="email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  placeholder="contact@yourservice.com"
+                  placeholder="your.email@example.com"
                   className="mt-1"
-                  required
                 />
               </div>
 
               <div>
-                <Label htmlFor="website" className="text-sm font-medium text-gray-700">
-                  Website URL
+                <Label htmlFor="providerType" className="text-sm font-medium text-gray-700">
+                  Provider Type
                 </Label>
-                <Input
-                  id="website"
-                  type="url"
-                  value={formData.website}
-                  onChange={(e) => setFormData({...formData, website: e.target.value})}
-                  placeholder="https://yourservice.com"
-                  className="mt-1"
-                />
+                <Select onValueChange={(value) => setFormData({...formData, providerType: value})}>
+                  <SelectTrigger className="mt-1">
+                    <SelectValue placeholder="Select provider type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="corrections-provider">Corrections Provider</SelectItem>
+                    <SelectItem value="hardware-provider">Hardware Provider</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </div>
 
             <div>
-              <Label htmlFor="description" className="text-sm font-medium text-gray-700">
-                Service Description *
+              <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                Subject
+              </Label>
+              <Input
+                id="subject"
+                type="text"
+                value={formData.subject}
+                onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                placeholder="Brief description of your inquiry"
+                className="mt-1"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                Message
               </Label>
               <Textarea
-                id="description"
-                value={formData.description}
-                onChange={(e) => setFormData({...formData, description: e.target.value})}
-                placeholder="Describe your RTK correction service, coverage area, accuracy, support, and any special features..."
+                id="message"
+                value={formData.message}
+                onChange={(e) => setFormData({...formData, message: e.target.value})}
+                placeholder="Tell us about your service, hardware, or inquiry. Include details about coverage area, products, or any specific requirements..."
                 className="mt-1 min-h-32"
-                required
               />
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <h3 className="font-semibold text-blue-800 mb-2">Next Steps</h3>
               <p className="text-blue-700 text-sm">
-                Our team will reach out within 2-3 business days with more information and next steps.
+                Our team will reach out within 2-3 business days with more information and next steps 
+                based on your inquiry type.
               </p>
             </div>
 
@@ -176,7 +170,7 @@ const SubmitListingPage = () => {
               type="submit" 
               className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
             >
-              Submit Listing for Review
+              Submit Listing
             </Button>
           </form>
         </CardContent>
