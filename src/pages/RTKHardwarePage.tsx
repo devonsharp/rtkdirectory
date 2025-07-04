@@ -9,55 +9,25 @@ const RTKHardwarePage = () => {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover leading manufacturers and suppliers of RTK hardware solutions, 
-            from receivers and antennas to complete surveying systems.
+            from base stations to rover receivers for precise positioning.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">RTK Receivers</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">RTK Base Stations</h3>
             <p className="text-gray-600 mb-4">
-              High-precision GNSS receivers designed for real-time kinematic positioning
+              Reference stations and base station equipment for RTK networks, providing 
+              correction data for high-precision positioning applications.
             </p>
             <div className="text-sm text-blue-600 font-medium">Coming Soon</div>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Base Stations</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">RTK Receivers (Rovers)</h3>
             <p className="text-gray-600 mb-4">
-              Reference stations and base station equipment for RTK networks
-            </p>
-            <div className="text-sm text-blue-600 font-medium">Coming Soon</div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">RTK Antennas</h3>
-            <p className="text-gray-600 mb-4">
-              Specialized antennas optimized for RTK applications and surveying
-            </p>
-            <div className="text-sm text-blue-600 font-medium">Coming Soon</div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Mobile Solutions</h3>
-            <p className="text-gray-600 mb-4">
-              Portable RTK systems and handheld devices for field work
-            </p>
-            <div className="text-sm text-blue-600 font-medium">Coming Soon</div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Software & Apps</h3>
-            <p className="text-gray-600 mb-4">
-              RTK processing software and mobile applications for data collection
-            </p>
-            <div className="text-sm text-blue-600 font-medium">Coming Soon</div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Accessories</h3>
-            <p className="text-gray-600 mb-4">
-              Cables, mounts, batteries and other RTK hardware accessories
+              Mobile RTK receivers and rover units for field surveying, construction, 
+              agriculture, and precision navigation applications.
             </p>
             <div className="text-sm text-blue-600 font-medium">Coming Soon</div>
           </div>
