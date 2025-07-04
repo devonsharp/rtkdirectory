@@ -36,8 +36,8 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/directory" element={<DirectoryPage />} />
-              <Route path="/directory/:continent" element={<ContinentDirectory />} />
+              <Route path="/rtk-service-providers" element={<DirectoryPage />} />
+              <Route path="/rtk-service-providers/:continent" element={<ContinentDirectory />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/submit-listing" element={<SubmitListingPage />} />
               <Route path="/blog" element={<BlogPage />} />

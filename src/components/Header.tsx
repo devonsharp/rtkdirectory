@@ -27,28 +27,28 @@ const Header = () => {
               }
             >
               <div className="py-1">
-                <Link to="/directory" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link to="/rtk-service-providers" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   All Providers
                 </Link>
-                <Link to="/directory/global" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link to="/rtk-service-providers/global" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Global
                 </Link>
-                <Link to="/directory/north-america" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link to="/rtk-service-providers/north-america" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   North America
                 </Link>
-                <Link to="/directory/europe" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link to="/rtk-service-providers/europe" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Europe
                 </Link>
-                <Link to="/directory/asia" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link to="/rtk-service-providers/asia" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Asia
                 </Link>
-                <Link to="/directory/south-america" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link to="/rtk-service-providers/south-america" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   South America
                 </Link>
-                <Link to="/directory/africa" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link to="/rtk-service-providers/africa" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Africa
                 </Link>
-                <Link to="/directory/oceania" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <Link to="/rtk-service-providers/oceania" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Oceania
                 </Link>
               </div>
