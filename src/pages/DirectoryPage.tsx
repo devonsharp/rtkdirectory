@@ -1,14 +1,12 @@
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Toggle } from "@/components/ui/toggle";
-import { Badge } from "@/components/ui/badge";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Grid3X3, List, Mail, Globe, Map, Gift, ExternalLink } from "lucide-react";
+import { Grid3X3, List } from "lucide-react";
 import ListingCard from "@/components/ListingCard";
+import DirectorySearch from "@/components/DirectorySearch";
+import RegionBrowser from "@/components/RegionBrowser";
+import ListingsTable from "@/components/ListingsTable";
+import DirectoryCTA from "@/components/DirectoryCTA";
 
 // Enhanced sample data with new fields
 const sampleListings = [
@@ -78,16 +76,6 @@ const sampleListings = [
   }
 ];
 
-const continents = [
-  { name: "Global", slug: "global", count: 1 },
-  { name: "North America", slug: "north-america", count: 1 },
-  { name: "Europe", slug: "europe", count: 1 },
-  { name: "Asia", slug: "asia", count: 1 },
-  { name: "South America", slug: "south-america", count: 0 },
-  { name: "Africa", slug: "africa", count: 0 },
-  { name: "Oceania", slug: "oceania", count: 0 }
-];
-
 const DirectoryPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [pricingFilter, setPricingFilter] = useState("all");
@@ -118,66 +106,16 @@ const DirectoryPage = () => {
         </p>
       </div>
 
-      {/* Search and Filters */}
-      <div className="mb-8 space-y-4">
-        <Input
-          type="text"
-          placeholder="Search by service name, region, country, or description..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="max-w-md mx-auto"
-        />
-        
-        <div className="flex flex-wrap justify-center gap-4">
-          <Select value={pricingFilter} onValueChange={setPricingFilter}>
-            <SelectTrigger className="w-40">
-              <SelectValue placeholder="All Pricing" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Pricing</SelectItem>
-              <SelectItem value="free">Free Services</SelectItem>
-              <SelectItem value="paid">Paid Services</SelectItem>
-            </SelectContent>
-          </Select>
-          
-          <Select value={regionFilter} onValueChange={setRegionFilter}>
-            <SelectTrigger className="w-40">
-              <SelectValue placeholder="All Regions" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Regions</SelectItem>
-              <SelectItem value="global">Global</SelectItem>
-              <SelectItem value="north-america">North America</SelectItem>
-              <SelectItem value="europe">Europe</SelectItem>
-              <SelectItem value="asia">Asia</SelectItem>
-              <SelectItem value="south-america">South America</SelectItem>
-              <SelectItem value="africa">Africa</SelectItem>
-              <SelectItem value="oceania">Oceania</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
+      <DirectorySearch
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        pricingFilter={pricingFilter}
+        setPricingFilter={setPricingFilter}
+        regionFilter={regionFilter}
+        setRegionFilter={setRegionFilter}
+      />
 
-      {/* Browse by Continent */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-          Browse by Region
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-          {continents.map((continent) => (
-            <Link key={continent.slug} to={`/directory/${continent.slug}`}>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer h-20 flex items-center justify-center">
-                <CardContent className="p-4 text-center">
-                  <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
-                  <p className="text-xs text-gray-600">
-                    {continent.count} service{continent.count !== 1 ? 's' : ''}
-                  </p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </div>
+      <RegionBrowser />
 
       {/* Listings */}
       <div className="mb-8">
@@ -213,125 +151,11 @@ const DirectoryPage = () => {
             ))}
           </div>
         ) : (
-          <div className="border rounded-lg overflow-hidden">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Provider</TableHead>
-                  <TableHead>Service Name</TableHead>
-                  <TableHead>Region</TableHead>
-                  <TableHead>Pricing</TableHead>
-                  <TableHead>Website</TableHead>
-                  <TableHead>Coverage Map</TableHead>
-                  <TableHead>Contact</TableHead>
-                  <TableHead>Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {filteredListings.map((listing) => (
-                  <TableRow key={listing.id}>
-                    <TableCell>
-                      <div>
-                        <div className="font-medium text-gray-900">{listing.company}</div>
-                        <div className="text-sm text-gray-500">{listing.providerInfo}</div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div>
-                        <div className="font-medium">{listing.name}</div>
-                        <div className="text-sm text-gray-500 max-w-xs truncate">{listing.description}</div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="text-sm">
-                        <div>{listing.region}</div>
-                        <div className="text-gray-500">{listing.country}</div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <Badge 
-                        variant={listing.pricing === "free" ? "secondary" : "default"}
-                        className={listing.pricing === "free" ? "bg-green-100 text-green-800" : "bg-blue-100 text-blue-800"}
-                      >
-                        {listing.pricing === "free" ? "Free" : "Paid"}
-                      </Badge>
-                      <div className="text-xs text-gray-500 mt-1">{listing.priceDetails}</div>
-                    </TableCell>
-                    <TableCell>
-                      <a 
-                        href={listing.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
-                      >
-                        <Globe className="h-3 w-3 mr-1" />
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                    </TableCell>
-                    <TableCell>
-                      <a 
-                        href={listing.coverageMapLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
-                      >
-                        <Map className="h-3 w-3 mr-1" />
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                    </TableCell>
-                    <TableCell>
-                      <a 
-                        href={`mailto:${listing.email}`}
-                        className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
-                      >
-                        <Mail className="h-3 w-3 mr-1" />
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex flex-col gap-1">
-                        <Button 
-                          size="sm" 
-                          className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-2 py-1 h-7"
-                          onClick={() => window.open(`mailto:${listing.email}`, '_blank')}
-                        >
-                          Contact
-                        </Button>
-                        {listing.freeTrialLink && (
-                          <Button 
-                            size="sm" 
-                            variant="outline"
-                            className="text-green-600 border-green-600 hover:bg-green-50 text-xs px-2 py-1 h-7"
-                            onClick={() => window.open(listing.freeTrialLink!, '_blank')}
-                          >
-                            <Gift className="h-3 w-3 mr-1" />
-                            Trial
-                          </Button>
-                        )}
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
+          <ListingsTable listings={filteredListings} />
         )}
       </div>
 
-      {/* CTA */}
-      <div className="text-center bg-gray-50 rounded-lg p-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-          Don't see your service listed?
-        </h3>
-        <p className="text-gray-600 mb-6">
-          Join our directory and connect with professionals who need RTK correction services.
-        </p>
-        <Link to="/submit-listing">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-            Submit Your Listing
-          </Button>
-        </Link>
-      </div>
+      <DirectoryCTA />
     </div>
   );
 };
