@@ -46,14 +46,12 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
             <TableRow key={listing.id}>
               <TableCell>
                 <div className="text-sm">
-                  <div>{listing.region}</div>
-                  <div className="text-gray-500">{listing.country}</div>
+                  <div>{listing.country}</div>
                 </div>
               </TableCell>
               <TableCell>
                 <div>
                   <div className="font-medium text-gray-900">{listing.company}</div>
-                  <div className="text-sm text-gray-500">{listing.providerInfo}</div>
                 </div>
               </TableCell>
               <TableCell>
@@ -61,12 +59,11 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
               </TableCell>
               <TableCell>
                 <Badge 
-                  variant={listing.pricing === "free" ? "secondary" : "default"}
-                  className={listing.pricing === "free" ? "bg-green-100 text-green-800" : "bg-blue-100 text-blue-800"}
+                  variant="secondary"
+                  className="bg-gray-100 text-gray-800"
                 >
                   {listing.pricing === "free" ? "Free" : "Paid"}
                 </Badge>
-                <div className="text-xs text-gray-500 mt-1">{listing.priceDetails}</div>
               </TableCell>
               <TableCell>
                 <a 
