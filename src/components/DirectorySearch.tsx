@@ -9,6 +9,8 @@ interface DirectorySearchProps {
   setPricingFilter: (filter: string) => void;
   regionFilter: string;
   setRegionFilter: (filter: string) => void;
+  countryFilter: string;
+  setCountryFilter: (filter: string) => void;
 }
 
 const DirectorySearch = ({
@@ -17,7 +19,9 @@ const DirectorySearch = ({
   pricingFilter,
   setPricingFilter,
   regionFilter,
-  setRegionFilter
+  setRegionFilter,
+  countryFilter,
+  setCountryFilter
 }: DirectorySearchProps) => {
   return (
     <div className="mb-8 space-y-4">
@@ -54,6 +58,19 @@ const DirectorySearch = ({
             <SelectItem value="south-america">South America</SelectItem>
             <SelectItem value="africa">Africa</SelectItem>
             <SelectItem value="oceania">Oceania</SelectItem>
+          </SelectContent>
+        </Select>
+
+        <Select value={countryFilter} onValueChange={setCountryFilter}>
+          <SelectTrigger className="w-40">
+            <SelectValue placeholder="All Countries" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Countries</SelectItem>
+            <SelectItem value="Multiple">Multiple</SelectItem>
+            <SelectItem value="United States">United States</SelectItem>
+            <SelectItem value="Germany">Germany</SelectItem>
+            <SelectItem value="Japan">Japan</SelectItem>
           </SelectContent>
         </Select>
       </div>

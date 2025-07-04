@@ -80,6 +80,7 @@ const DirectoryPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [pricingFilter, setPricingFilter] = useState("all");
   const [regionFilter, setRegionFilter] = useState("all");
+  const [countryFilter, setCountryFilter] = useState("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   
   const filteredListings = sampleListings.filter(listing => {
@@ -90,8 +91,9 @@ const DirectoryPage = () => {
     
     const matchesPricing = pricingFilter === "all" || listing.pricing === pricingFilter;
     const matchesRegion = regionFilter === "all" || listing.continent === regionFilter;
+    const matchesCountry = countryFilter === "all" || listing.country === countryFilter;
     
-    return matchesSearch && matchesPricing && matchesRegion;
+    return matchesSearch && matchesPricing && matchesRegion && matchesCountry;
   });
 
   return (
@@ -113,6 +115,8 @@ const DirectoryPage = () => {
         setPricingFilter={setPricingFilter}
         regionFilter={regionFilter}
         setRegionFilter={setRegionFilter}
+        countryFilter={countryFilter}
+        setCountryFilter={setCountryFilter}
       />
 
       <RegionBrowser />
