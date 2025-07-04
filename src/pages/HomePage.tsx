@@ -49,13 +49,10 @@ const HomePage = () => {
               <Link key={continent.slug} to={continent.slug === "" ? "/rtk-service-providers" : `/rtk-service-providers/${continent.slug}`}>
                 <Card className="hover:shadow-lg transition-shadow cursor-pointer h-24 flex items-center justify-center">
                   <CardContent className="p-4 text-center">
-                    <div className="flex flex-col items-center justify-center">
-                      <Globe className="h-8 w-8 text-blue-600 mb-2 stroke-2" style={{ stroke: '#2563eb' }} />
-                      <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
-                      <p className="text-xs text-gray-600">
-                        {continent.count} service{continent.count !== 1 ? 's' : ''}
-                      </p>
-                    </div>
+                    <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
+                    <p className="text-xs text-gray-600">
+                      {continent.count} service{continent.count !== 1 ? 's' : ''}
+                    </p>
                   </CardContent>
                 </Card>
               </Link>
