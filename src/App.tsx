@@ -12,6 +12,8 @@ import ContinentDirectory from "./pages/ContinentDirectory";
 import ContactPage from "./pages/ContactPage";
 import SubmitListingPage from "./pages/SubmitListingPage";
 import BlogPage from "./pages/BlogPage";
+import KnowledgeBasePage from "./pages/KnowledgeBasePage";
+import GlossaryPage from "./pages/GlossaryPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +34,8 @@ const App = () => (
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/submit-listing" element={<SubmitListingPage />} />
               <Route path="/blog" element={<BlogPage />} />
+              <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
+              <Route path="/glossary" element={<GlossaryPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

@@ -25,9 +25,29 @@ const Header = () => {
             <Link to="/directory" className="text-gray-700 hover:text-blue-600 transition-colors">
               RTK Providers
             </Link>
-            <Link to="/blog" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Blog
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center">
+                Resources
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="bg-white">
+                <DropdownMenuItem asChild>
+                  <Link to="/knowledge-base" className="w-full">
+                    Knowledge Base
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/blog" className="w-full">
+                    Blog
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/glossary" className="w-full">
+                    Glossary
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           <DropdownMenu>
