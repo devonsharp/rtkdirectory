@@ -1,0 +1,121 @@
+
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { MapPin, Users, Globe } from "lucide-react";
+
+const HomePage = () => {
+  return (
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-b from-blue-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Find RTK Correction Services
+            <span className="text-blue-600"> Worldwide</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            RTKDirectory.com is the global directory connecting surveyors, drone operators, 
+            and GNSS users with trusted RTK correction service providers worldwide.
+          </p>
+          <Link to="/submit-listing">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+              Submit Your Listing
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Who We Help Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Who We Help
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <MapPin className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3">Surveyors</h3>
+                <p className="text-gray-600">
+                  Professional land surveyors seeking accurate RTK correction services 
+                  for precise measurements and mapping projects.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Globe className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3">Drone Operators</h3>
+                <p className="text-gray-600">
+                  Commercial and professional drone pilots requiring high-precision 
+                  positioning for mapping, inspection, and surveying operations.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3">GNSS Users</h3>
+                <p className="text-gray-600">
+                  Engineers, researchers, and professionals using GNSS equipment 
+                  who need reliable correction services for their applications.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Why List With Us Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            Why List Your RTK Service With Us?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="text-left">
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Global Reach</h3>
+              <p className="text-gray-600">
+                Connect with professionals worldwide who need RTK correction services 
+                in your region.
+              </p>
+            </div>
+            <div className="text-left">
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Targeted Audience</h3>
+              <p className="text-gray-600">
+                Reach qualified surveyors, drone operators, and GNSS users actively 
+                seeking correction services.
+              </p>
+            </div>
+            <div className="text-left">
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Simple Process</h3>
+              <p className="text-gray-600">
+                Easy listing submission with manual review and payment processing 
+                for quality assurance.
+              </p>
+            </div>
+            <div className="text-left">
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Professional Directory</h3>
+              <p className="text-gray-600">
+                Be part of the most comprehensive RTK correction services directory 
+                on the web.
+              </p>
+            </div>
+          </div>
+          <div className="mt-12">
+            <Link to="/submit-listing">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                Get Listed Today
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HomePage;
