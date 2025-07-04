@@ -37,7 +37,7 @@ const SubmitListingPage = () => {
     
     toast({
       title: "Listing Submitted!",
-      description: "We will review your information and contact you for payment. All payments are handled manually by email.",
+      description: "Our team will reach out within 2-3 business days with more information and next steps.",
     });
     
     // Reset form
@@ -166,11 +166,9 @@ const SubmitListingPage = () => {
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-800 mb-2">Payment Information</h3>
+              <h3 className="font-semibold text-blue-800 mb-2">Next Steps</h3>
               <p className="text-blue-700 text-sm">
-                We will review your information and contact you for payment. 
-                All payments are handled manually by email. Our team will reach out 
-                within 2-3 business days with pricing and next steps.
+                Our team will reach out within 2-3 business days with more information and next steps.
               </p>
             </div>
 

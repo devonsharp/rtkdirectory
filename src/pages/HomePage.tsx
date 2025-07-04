@@ -4,6 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Users, Globe, Layers, Building, Code } from "lucide-react";
 
+const continents = [
+  { name: "North America", slug: "north-america", count: 1 },
+  { name: "Europe", slug: "europe", count: 1 },
+  { name: "Asia", slug: "asia", count: 1 },
+  { name: "South America", slug: "south-america", count: 0 },
+  { name: "Africa", slug: "africa", count: 0 },
+  { name: "Oceania", slug: "oceania", count: 0 },
+  { name: "Global", slug: "global", count: 1 }
+];
+
 const HomePage = () => {
   return (
     <div className="bg-white">
@@ -18,16 +28,39 @@ const HomePage = () => {
             RTKDirectory.com is the global directory connecting surveyors, drone operators, 
             and GNSS users with trusted RTK correction service providers worldwide.
           </p>
-          <Link to="/submit-listing">
+          <Link to="/directory">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-              Submit Your Listing
+              View All RTK Providers
             </Button>
           </Link>
         </div>
       </section>
 
-      {/* Who We Help Section */}
+      {/* Browse by Region Section */}
       <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Browse RTK Providers by Region
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            {continents.map((continent) => (
+              <Link key={continent.slug} to={`/directory/${continent.slug}`}>
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-20 flex items-center justify-center">
+                  <CardContent className="p-4 text-center">
+                    <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
+                    <p className="text-xs text-gray-600">
+                      {continent.count} service{continent.count !== 1 ? 's' : ''}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Help Section */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Who We Help
@@ -103,7 +136,7 @@ const HomePage = () => {
       </section>
 
       {/* Why List With Us Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Why List Your RTK Service With Us?

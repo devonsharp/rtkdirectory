@@ -19,7 +19,7 @@ const sampleListings = [
     email: "contact@precisionrtk.com",
     website: "https://precisionrtk.com",
     description: "Professional RTK correction services covering the entire North American region with 24/7 support and sub-centimeter accuracy.",
-    pricing: "paid",
+    pricing: "paid" as const,
     priceDetails: "$29.99/month",
     coverageMapLink: "https://precisionrtk.com/coverage",
     freeTrialLink: "https://precisionrtk.com/trial",
@@ -35,7 +35,7 @@ const sampleListings = [
     email: "info@eurortk.eu", 
     website: "https://eurortk.eu",
     description: "Comprehensive RTK correction network covering all EU countries with real-time corrections and historical data access.",
-    pricing: "paid",
+    pricing: "paid" as const,
     priceDetails: "€24.99/month",
     coverageMapLink: "https://eurortk.eu/coverage-map",
     freeTrialLink: null,
@@ -51,7 +51,7 @@ const sampleListings = [
     email: "support@asiapacgnss.com",
     website: "https://asiapacgnss.com", 
     description: "Leading RTK correction provider in the Asia Pacific region serving surveying and drone mapping professionals.",
-    pricing: "free",
+    pricing: "free" as const,
     priceDetails: "Free with premium upgrades available",
     coverageMapLink: "https://asiapacgnss.com/map",
     freeTrialLink: null,
@@ -67,7 +67,7 @@ const sampleListings = [
     email: "contact@globalrtkpro.com",
     website: "https://globalrtkpro.com",
     description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage.",
-    pricing: "paid",
+    pricing: "paid" as const,
     priceDetails: "$49.99/month",
     coverageMapLink: "https://globalrtkpro.com/global-coverage",
     freeTrialLink: "https://globalrtkpro.com/free-trial",
@@ -159,10 +159,10 @@ const DirectoryPage = () => {
         <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
           Browse by Region
         </h2>
-        <div className="grid md:grid-cols-3 lg:grid-cols-7 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
           {continents.map((continent) => (
             <Link key={continent.slug} to={`/directory/${continent.slug}`}>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer h-20 flex items-center justify-center">
                 <CardContent className="p-4 text-center">
                   <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
                   <p className="text-xs text-gray-600">

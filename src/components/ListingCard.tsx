@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Mail, Globe, Map, Gift, DollarSign, Info } from "lucide-react";
+import { MapPin, Mail, Globe, Map, Gift, Info } from "lucide-react";
 
 interface Listing {
   id: number;
@@ -44,10 +44,6 @@ const ListingCard = ({ listing }: ListingCardProps) => {
           <div className="flex items-center">
             <MapPin className="h-3 w-3 mr-1" />
             <span>{listing.region} • {listing.country}</span>
-          </div>
-          <div className="flex items-center">
-            <DollarSign className="h-3 w-3 mr-1" />
-            <span>{listing.priceDetails}</span>
           </div>
         </div>
       </CardHeader>
