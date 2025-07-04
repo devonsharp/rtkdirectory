@@ -2,7 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Drone, MapPin, Camera, Settings } from "lucide-react";
+import { ArrowLeft, Plane, MapPin, Camera, Settings } from "lucide-react";
 
 const BlogPost6 = () => {
   return (
@@ -27,7 +27,7 @@ const BlogPost6 = () => {
         <Card className="mb-8 border-blue-200 bg-blue-50">
           <CardContent className="p-6">
             <div className="flex items-start space-x-3">
-              <Drone className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
+              <Plane className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
               <div>
                 <p className="text-lg text-blue-800 leading-relaxed">
                   Drone mapping with RTK corrections delivers survey-grade accuracy for photogrammetry, LiDAR, and inspection missions. 
