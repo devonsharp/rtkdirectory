@@ -16,6 +16,12 @@ import KnowledgeBasePage from "./pages/KnowledgeBasePage";
 import GlossaryPage from "./pages/GlossaryPage";
 import RTKHardwarePage from "./pages/RTKHardwarePage";
 import NotFound from "./pages/NotFound";
+import BlogPost1 from "./pages/blog/BlogPost1";
+import BlogPost2 from "./pages/blog/BlogPost2";
+import BlogPost3 from "./pages/blog/BlogPost3";
+import BlogPost4 from "./pages/blog/BlogPost4";
+import BlogPost5 from "./pages/blog/BlogPost5";
+import BlogPost6 from "./pages/blog/BlogPost6";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +41,12 @@ const App = () => (
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/submit-listing" element={<SubmitListingPage />} />
               <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/understanding-rtk-correction-services" element={<BlogPost1 />} />
+              <Route path="/blog/choosing-rtk-service-provider" element={<BlogPost2 />} />
+              <Route path="/blog/rtk-vs-ppk-positioning" element={<BlogPost3 />} />
+              <Route path="/blog/future-of-gnss-rtk-technology" element={<BlogPost4 />} />
+              <Route path="/blog/common-rtk-setup-mistakes" element={<BlogPost5 />} />
+              <Route path="/blog/rtk-drone-mapping-best-practices" element={<BlogPost6 />} />
               <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
               <Route path="/glossary" element={<GlossaryPage />} />
               <Route path="/rtk-hardware" element={<RTKHardwarePage />} />

@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,42 +10,48 @@ const BlogPage = () => {
       title: "Understanding RTK Correction Services: A Complete Guide",
       excerpt: "Learn everything you need to know about RTK correction services, how they work, and why they're essential for precision surveying and mapping.",
       date: "March 15, 2024",
-      readTime: "8 min read"
+      readTime: "8 min read",
+      slug: "understanding-rtk-correction-services"
     },
     {
       id: 2,
       title: "Choosing the Right RTK Service Provider for Your Project",
       excerpt: "Key factors to consider when selecting an RTK correction service provider, including coverage area, accuracy, and support options.",
       date: "March 10, 2024", 
-      readTime: "6 min read"
+      readTime: "6 min read",
+      slug: "choosing-rtk-service-provider"
     },
     {
       id: 3,
       title: "RTK vs PPK: Which Positioning Method is Right for You?",
       excerpt: "Compare Real-Time Kinematic (RTK) and Post-Processed Kinematic (PPK) positioning methods to determine the best approach for your needs.",
       date: "March 5, 2024",
-      readTime: "7 min read"
+      readTime: "7 min read",
+      slug: "rtk-vs-ppk-positioning"
     },
     {
       id: 4,
       title: "The Future of GNSS and RTK Technology",
       excerpt: "Explore emerging trends and technologies shaping the future of Global Navigation Satellite Systems and RTK correction services.",
       date: "February 28, 2024",
-      readTime: "10 min read"
+      readTime: "10 min read",
+      slug: "future-of-gnss-rtk-technology"
     },
     {
       id: 5,
       title: "Common RTK Setup Mistakes and How to Avoid Them",
       excerpt: "Learn about the most common mistakes when setting up RTK systems and get practical tips to ensure optimal performance.",
       date: "February 22, 2024",
-      readTime: "5 min read"
+      readTime: "5 min read",
+      slug: "common-rtk-setup-mistakes"
     },
     {
       id: 6,
       title: "RTK Correction Services for Drone Mapping: Best Practices",
       excerpt: "Specialized guide for drone operators on integrating RTK correction services for precision mapping and surveying applications.",
       date: "February 15, 2024",
-      readTime: "9 min read"
+      readTime: "9 min read",
+      slug: "rtk-drone-mapping-best-practices"
     }
   ];
 
@@ -77,12 +84,14 @@ const BlogPage = () => {
               <p className="text-gray-600 mb-4 leading-relaxed">
                 {post.excerpt}
               </p>
-              <Button 
-                variant="outline" 
-                className="text-blue-600 border-blue-600 hover:bg-blue-50"
-              >
-                Read More
-              </Button>
+              <Link to={`/blog/${post.slug}`}>
+                <Button 
+                  variant="outline" 
+                  className="text-blue-600 border-blue-600 hover:bg-blue-50"
+                >
+                  Read More
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         ))}
