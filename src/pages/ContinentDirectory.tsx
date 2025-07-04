@@ -1,7 +1,11 @@
 
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Toggle } from "@/components/ui/toggle";
+import { Grid3X3, List } from "lucide-react";
 import ListingCard from "@/components/ListingCard";
+import ListingsTable from "@/components/ListingsTable";
 import { ArrowLeft } from "lucide-react";
 
 // Enhanced sample data with new fields - reordered to put Global first
@@ -85,6 +89,7 @@ const continentNames: { [key: string]: string } = {
 const ContinentDirectory = () => {
   const { continent } = useParams<{ continent: string }>();
   const continentName = continentNames[continent || ""] || "Unknown";
+  const [viewMode, setViewMode] = useState<"grid" | "list">("list");
   
   const filteredListings = sampleListings.filter(
     listing => listing.continent === continent
@@ -113,10 +118,41 @@ const ContinentDirectory = () => {
       </div>
 
       {filteredListings.length > 0 ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {filteredListings.map((listing) => (
-            <ListingCard key={listing.id} listing={listing} />
-          ))}
+        <div className="mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">
+              RTK Service Providers ({filteredListings.length})
+            </h2>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-600">View:</span>
+              <Toggle
+                pressed={viewMode === "list"}
+                onPressedChange={() => setViewMode("list")}
+                aria-label="Table view"
+                className="data-[state=on]:bg-blue-100 data-[state=on]:text-blue-600"
+              >
+                <List className="h-4 w-4" />
+              </Toggle>
+              <Toggle
+                pressed={viewMode === "grid"}
+                onPressedChange={() => setViewMode("grid")}
+                aria-label="Grid view"
+                className="data-[state=on]:bg-blue-100 data-[state=on]:text-blue-600"
+              >
+                <Grid3X3 className="h-4 w-4" />
+              </Toggle>
+            </div>
+          </div>
+
+          {viewMode === "grid" ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredListings.map((listing) => (
+                <ListingCard key={listing.id} listing={listing} />
+              ))}
+            </div>
+          ) : (
+            <ListingsTable listings={filteredListings} />
+          )}
         </div>
       ) : (
         <div className="text-center py-12">
