@@ -95,6 +95,13 @@ const ContinentDirectory = () => {
     listing => listing.continent === continent
   );
 
+  const getHeading = () => {
+    if (continent === "global") {
+      return "Global RTK Correction Service Providers";
+    }
+    return `RTK Correction Service Providers in ${continentName}`;
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
@@ -107,7 +114,7 @@ const ContinentDirectory = () => {
         </Link>
         
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          RTK Services in {continentName}
+          {getHeading()}
         </h1>
         <p className="text-xl text-gray-600">
           {continentName === "Global" 
