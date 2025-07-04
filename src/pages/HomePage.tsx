@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -46,24 +45,21 @@ const HomePage = () => {
             Browse RTK Providers by Region
           </h2>
           <div className="grid grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {continents.map((continent) => {
-              const IconComponent = continent.icon;
-              return (
-                <Link key={continent.slug} to={continent.slug === "" ? "/rtk-service-providers" : `/rtk-service-providers/${continent.slug}`}>
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer h-20 flex items-center justify-center">
-                    <CardContent className="p-4 text-center">
-                      <div className="flex items-center justify-center mb-1">
-                        <IconComponent className="h-4 w-4 text-blue-600 mr-1" />
-                        <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
-                      </div>
+            {continents.map((continent) => (
+              <Link key={continent.slug} to={continent.slug === "" ? "/rtk-service-providers" : `/rtk-service-providers/${continent.slug}`}>
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-24 flex items-center justify-center">
+                  <CardContent className="p-4 text-center">
+                    <div className="flex flex-col items-center justify-center">
+                      <Globe className="h-8 w-8 text-blue-600 mb-2 stroke-2" style={{ stroke: '#2563eb' }} />
+                      <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
                       <p className="text-xs text-gray-600">
                         {continent.count} service{continent.count !== 1 ? 's' : ''}
                       </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              );
-            })}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
