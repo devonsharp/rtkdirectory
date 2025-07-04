@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import ListingCard from "@/components/ListingCard";
 import { ArrowLeft } from "lucide-react";
 
-// Sample data - would come from database in real app
+// Enhanced sample data with new fields
 const sampleListings = [
   {
     id: 1,
@@ -12,9 +12,15 @@ const sampleListings = [
     company: "PrecisionRTK Solutions LLC",
     region: "North America",
     continent: "north-america",
+    country: "United States",
     email: "contact@precisionrtk.com",
     website: "https://precisionrtk.com",
-    description: "Professional RTK correction services covering the entire North American region with 24/7 support and sub-centimeter accuracy."
+    description: "Professional RTK correction services covering the entire North American region with 24/7 support and sub-centimeter accuracy.",
+    pricing: "paid" as const,
+    priceDetails: "$29.99/month",
+    coverageMapLink: "https://precisionrtk.com/coverage",
+    freeTrialLink: "https://precisionrtk.com/trial",
+    providerInfo: "Established in 2015, serving 10,000+ professional users"
   },
   {
     id: 2,
@@ -22,9 +28,15 @@ const sampleListings = [
     company: "European RTK Services",
     region: "Europe",
     continent: "europe",
+    country: "Germany",
     email: "info@eurortk.eu",
     website: "https://eurortk.eu", 
-    description: "Comprehensive RTK correction network covering all EU countries with real-time corrections and historical data access."
+    description: "Comprehensive RTK correction network covering all EU countries with real-time corrections and historical data access.",
+    pricing: "paid" as const,
+    priceDetails: "€24.99/month",
+    coverageMapLink: "https://eurortk.eu/coverage-map",
+    freeTrialLink: null,
+    providerInfo: "Leading European provider with 99.9% uptime guarantee"
   },
   {
     id: 3,
@@ -32,9 +44,31 @@ const sampleListings = [
     company: "Asia Pacific GNSS Solutions", 
     region: "Asia Pacific",
     continent: "asia",
+    country: "Japan",
     email: "support@asiapacgnss.com",
     website: "https://asiapacgnss.com",
-    description: "Leading RTK correction provider in the Asia Pacific region serving surveying and drone mapping professionals."
+    description: "Leading RTK correction provider in the Asia Pacific region serving surveying and drone mapping professionals.",
+    pricing: "free" as const,
+    priceDetails: "Free with premium upgrades available",
+    coverageMapLink: "https://asiapacgnss.com/map",
+    freeTrialLink: null,
+    providerInfo: "Open-source community driven with enterprise support options"
+  },
+  {
+    id: 4,
+    name: "GlobalRTK Pro",
+    company: "Global Positioning Solutions",
+    region: "Global",
+    continent: "global",
+    country: "Multiple",
+    email: "contact@globalrtkpro.com",
+    website: "https://globalrtkpro.com",
+    description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage.",
+    pricing: "paid" as const,
+    priceDetails: "$49.99/month",
+    coverageMapLink: "https://globalrtkpro.com/global-coverage",
+    freeTrialLink: "https://globalrtkpro.com/free-trial",
+    providerInfo: "Global network with 500+ reference stations worldwide"
   }
 ];
 
@@ -44,7 +78,8 @@ const continentNames: { [key: string]: string } = {
   "asia": "Asia",
   "south-america": "South America",
   "africa": "Africa",
-  "oceania": "Oceania"
+  "oceania": "Oceania",
+  "global": "Global"
 };
 
 const ContinentDirectory = () => {
@@ -70,7 +105,10 @@ const ContinentDirectory = () => {
           RTK Services in {continentName}
         </h1>
         <p className="text-xl text-gray-600">
-          Browse RTK correction service providers in {continentName}.
+          {continentName === "Global" 
+            ? "Browse RTK correction service providers with worldwide coverage."
+            : `Browse RTK correction service providers in ${continentName}.`
+          }
         </p>
       </div>
 
