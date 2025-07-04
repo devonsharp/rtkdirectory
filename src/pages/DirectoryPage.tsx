@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,9 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Toggle } from "@/components/ui/toggle";
-import { Grid3X3, List } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Grid3X3, List, Mail, Globe, Map, Gift, ExternalLink } from "lucide-react";
 import ListingCard from "@/components/ListingCard";
-import ListingRow from "@/components/ListingRow";
 
 // Enhanced sample data with new fields
 const sampleListings = [
@@ -198,7 +198,7 @@ const DirectoryPage = () => {
             <Toggle
               pressed={viewMode === "list"}
               onPressedChange={() => setViewMode("list")}
-              aria-label="List view"
+              aria-label="Table view"
               className="data-[state=on]:bg-blue-100 data-[state=on]:text-blue-600"
             >
               <List className="h-4 w-4" />
@@ -213,10 +213,107 @@ const DirectoryPage = () => {
             ))}
           </div>
         ) : (
-          <div className="space-y-4">
-            {filteredListings.map((listing) => (
-              <ListingRow key={listing.id} listing={listing} />
-            ))}
+          <div className="border rounded-lg overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Provider</TableHead>
+                  <TableHead>Service Name</TableHead>
+                  <TableHead>Region</TableHead>
+                  <TableHead>Pricing</TableHead>
+                  <TableHead>Website</TableHead>
+                  <TableHead>Coverage Map</TableHead>
+                  <TableHead>Contact</TableHead>
+                  <TableHead>Actions</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {filteredListings.map((listing) => (
+                  <TableRow key={listing.id}>
+                    <TableCell>
+                      <div>
+                        <div className="font-medium text-gray-900">{listing.company}</div>
+                        <div className="text-sm text-gray-500">{listing.providerInfo}</div>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div>
+                        <div className="font-medium">{listing.name}</div>
+                        <div className="text-sm text-gray-500 max-w-xs truncate">{listing.description}</div>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="text-sm">
+                        <div>{listing.region}</div>
+                        <div className="text-gray-500">{listing.country}</div>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <Badge 
+                        variant={listing.pricing === "free" ? "secondary" : "default"}
+                        className={listing.pricing === "free" ? "bg-green-100 text-green-800" : "bg-blue-100 text-blue-800"}
+                      >
+                        {listing.pricing === "free" ? "Free" : "Paid"}
+                      </Badge>
+                      <div className="text-xs text-gray-500 mt-1">{listing.priceDetails}</div>
+                    </TableCell>
+                    <TableCell>
+                      <a 
+                        href={listing.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
+                      >
+                        <Globe className="h-3 w-3 mr-1" />
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    </TableCell>
+                    <TableCell>
+                      <a 
+                        href={listing.coverageMapLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
+                      >
+                        <Map className="h-3 w-3 mr-1" />
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    </TableCell>
+                    <TableCell>
+                      <a 
+                        href={`mailto:${listing.email}`}
+                        className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
+                      >
+                        <Mail className="h-3 w-3 mr-1" />
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex flex-col gap-1">
+                        <Button 
+                          size="sm" 
+                          className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-2 py-1 h-7"
+                          onClick={() => window.open(`mailto:${listing.email}`, '_blank')}
+                        >
+                          Contact
+                        </Button>
+                        {listing.freeTrialLink && (
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            className="text-green-600 border-green-600 hover:bg-green-50 text-xs px-2 py-1 h-7"
+                            onClick={() => window.open(listing.freeTrialLink!, '_blank')}
+                          >
+                            <Gift className="h-3 w-3 mr-1" />
+                            Trial
+                          </Button>
+                        )}
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         )}
       </div>
