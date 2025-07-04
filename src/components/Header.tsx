@@ -21,7 +21,7 @@ const Header = () => {
             <HoverDropdown
               trigger={
                 <div className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center">
-                  RTK Providers
+                  RTK Corrections Providers
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </div>
               }
@@ -53,6 +53,10 @@ const Header = () => {
                 </Link>
               </div>
             </HoverDropdown>
+
+            <Link to="/rtk-hardware" className="text-gray-700 hover:text-blue-600 transition-colors">
+              RTK Hardware Providers
+            </Link>
             
             <HoverDropdown
               trigger={
