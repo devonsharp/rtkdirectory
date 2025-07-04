@@ -1,23 +1,46 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Mail, Globe, Map, Gift, Star } from "lucide-react";
 
-const FeaturedServiceCard = () => {
-  const featuredService = {
-    name: "GlobalRTK Pro",
-    company: "Global Positioning Solutions",
-    region: "Global",
-    country: "Multiple",
-    email: "contact@globalrtkpro.com",
-    website: "https://globalrtkpro.com",
-    description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage with 99.9% uptime guarantee.",
-    pricing: "paid" as "free" | "paid",
-    priceDetails: "$49.99/month",
-    coverageMapLink: "https://globalrtkpro.com/global-coverage",
-    freeTrialLink: "https://globalrtkpro.com/free-trial",
-    providerInfo: "Global network with 500+ reference stations worldwide"
-  };
+interface FeaturedServiceCardProps {
+  isSecondCard?: boolean;
+}
+
+const FeaturedServiceCard = ({ isSecondCard = false }: FeaturedServiceCardProps) => {
+  const featuredServices = [
+    {
+      name: "GlobalRTK Pro",
+      company: "Global Positioning Solutions",
+      region: "Global",
+      country: "Multiple",
+      email: "contact@globalrtkpro.com",
+      website: "https://globalrtkpro.com",
+      description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage with 99.9% uptime guarantee.",
+      pricing: "paid" as "free" | "paid",
+      priceDetails: "$49.99/month",
+      coverageMapLink: "https://globalrtkpro.com/global-coverage",
+      freeTrialLink: "https://globalrtkpro.com/free-trial",
+      providerInfo: "Global network with 500+ reference stations worldwide"
+    },
+    {
+      name: "PrecisionNet RTK",
+      company: "PrecisionNet Technologies",
+      region: "North America",
+      country: "United States",
+      email: "info@precisionnet.com",
+      website: "https://precisionnet.com",
+      description: "High-accuracy RTK correction network covering major metropolitan areas with sub-centimeter precision for professional surveying and mapping applications.",
+      pricing: "paid" as "free" | "paid",
+      priceDetails: "$39.99/month",
+      coverageMapLink: "https://precisionnet.com/coverage",
+      freeTrialLink: "https://precisionnet.com/trial",
+      providerInfo: "Premium network with 200+ base stations across North America"
+    }
+  ];
+
+  const featuredService = featuredServices[isSecondCard ? 1 : 0];
 
   return (
     <Card className="border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-lg">
