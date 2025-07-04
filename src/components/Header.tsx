@@ -26,7 +26,7 @@ const Header = () => {
             </Link>
           </nav>
 
-          <Link to="/contact">
+          <Link to="/submit-listing">
             <Button className="bg-blue-600 hover:bg-blue-700 text-white">
               Contact
             </Button>
