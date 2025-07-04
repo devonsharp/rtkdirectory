@@ -8,12 +8,12 @@ interface IntroductionCardProps {
 
 const IntroductionCard = ({ content }: IntroductionCardProps) => {
   return (
-    <Card className="mb-8 border-blue-200 bg-blue-50">
+    <Card className="mb-8 border-gray-200 bg-gray-50">
       <CardContent className="p-6">
         <div className="flex items-start space-x-3">
-          <Plane className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
+          <Plane className="h-6 w-6 text-gray-600 mt-1 flex-shrink-0" />
           <div>
-            <p className="text-lg text-blue-800 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed">
               {content}
             </p>
           </div>

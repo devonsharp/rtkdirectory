@@ -32,13 +32,13 @@ const PostProcessingSection = () => {
         </div>
       </div>
 
-      <Card className="border-purple-200 bg-purple-50">
+      <Card className="border-gray-200 bg-white">
         <CardContent className="p-6">
-          <h3 className="font-semibold text-purple-800 mb-3">Processing Software Recommendations</h3>
+          <h3 className="font-semibold text-gray-900 mb-3">Processing Software Recommendations</h3>
           <div className="grid md:grid-cols-3 gap-4">
             <div>
-              <h4 className="font-medium text-purple-700 mb-2">RTK/PPK Processing</h4>
-              <ul className="text-purple-700 text-sm space-y-1">
+              <h4 className="font-medium text-gray-700 mb-2">RTK/PPK Processing</h4>
+              <ul className="text-gray-700 text-sm space-y-1">
                 <li>• RTKLIB (free)</li>
                 <li>• NovAtel Inertial Explorer</li>
                 <li>• Waypoint Inertial Explorer</li>
@@ -46,8 +46,8 @@ const PostProcessingSection = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium text-purple-700 mb-2">Photogrammetry</h4>
-              <ul className="text-purple-700 text-sm space-y-1">
+              <h4 className="font-medium text-gray-700 mb-2">Photogrammetry</h4>
+              <ul className="text-gray-700 text-sm space-y-1">
                 <li>• Agisoft Metashape</li>
                 <li>• Pix4D Desktop</li>
                 <li>• RealityCapture</li>
@@ -55,8 +55,8 @@ const PostProcessingSection = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium text-purple-700 mb-2">Integrated Solutions</h4>
-              <ul className="text-purple-700 text-sm space-y-1">
+              <h4 className="font-medium text-gray-700 mb-2">Integrated Solutions</h4>
+              <ul className="text-gray-700 text-sm space-y-1">
                 <li>• UgCS Pro</li>
                 <li>• Pix4D Cloud</li>
                 <li>• Trimble UAS Master</li>

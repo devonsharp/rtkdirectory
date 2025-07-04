@@ -7,13 +7,13 @@ const TroubleshootingSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Troubleshooting Common Issues</h2>
       
       <div className="space-y-4">
-        <Card className="border-red-200 bg-red-50">
+        <Card className="border-l-4 border-l-gray-500">
           <CardContent className="p-4">
-            <h3 className="font-semibold text-red-800 mb-2">RTK Fix Loss During Flight</h3>
+            <h3 className="font-semibold text-gray-900 mb-2">RTK Fix Loss During Flight</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <h4 className="font-medium text-red-700 mb-1">Causes:</h4>
-                <ul className="text-red-700 text-sm space-y-1">
+                <h4 className="font-medium text-gray-700 mb-1">Causes:</h4>
+                <ul className="text-gray-700 text-sm space-y-1">
                   <li>• Communication interruption</li>
                   <li>• Satellite visibility obstruction</li>
                   <li>• High DOP values</li>
@@ -21,8 +21,8 @@ const TroubleshootingSection = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium text-red-700 mb-1">Solutions:</h4>
-                <ul className="text-red-700 text-sm space-y-1">
+                <h4 className="font-medium text-gray-700 mb-1">Solutions:</h4>
+                <ul className="text-gray-700 text-sm space-y-1">
                   <li>• Return to home and re-initialize</li>
                   <li>• Switch to backup correction source</li>
                   <li>• Increase flight altitude</li>
@@ -33,13 +33,13 @@ const TroubleshootingSection = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-orange-200 bg-orange-50">
+        <Card className="border-l-4 border-l-gray-500">
           <CardContent className="p-4">
-            <h3 className="font-semibold text-orange-800 mb-2">Coordinate System Errors</h3>
+            <h3 className="font-semibold text-gray-900 mb-2">Coordinate System Errors</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <h4 className="font-medium text-orange-700 mb-1">Symptoms:</h4>
-                <ul className="text-orange-700 text-sm space-y-1">
+                <h4 className="font-medium text-gray-700 mb-1">Symptoms:</h4>
+                <ul className="text-gray-700 text-sm space-y-1">
                   <li>• Large positional offsets</li>
                   <li>• Inconsistent check point residuals</li>
                   <li>• Scale discrepancies</li>
@@ -47,8 +47,8 @@ const TroubleshootingSection = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium text-orange-700 mb-1">Solutions:</h4>
-                <ul className="text-orange-700 text-sm space-y-1">
+                <h4 className="font-medium text-gray-700 mb-1">Solutions:</h4>
+                <ul className="text-gray-700 text-sm space-y-1">
                   <li>• Verify datum and projection settings</li>
                   <li>• Check with survey control points</li>
                   <li>• Validate coordinate transformations</li>

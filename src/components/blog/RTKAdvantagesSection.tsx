@@ -12,10 +12,10 @@ const RTKAdvantagesSection = () => {
       </p>
       
       <div className="grid md:grid-cols-2 gap-6 mb-6">
-        <Card className="border-green-200 bg-green-50">
+        <Card className="border-gray-200 bg-white">
           <CardContent className="p-6">
-            <h3 className="font-semibold text-green-800 mb-3">RTK Advantages</h3>
-            <ul className="text-green-700 space-y-2">
+            <h3 className="font-semibold text-gray-900 mb-3">RTK Advantages</h3>
+            <ul className="text-gray-700 space-y-2">
               <li>• Achieve 2-5 cm absolute accuracy</li>
               <li>• Reduce or eliminate GCPs</li>
               <li>• Faster field operations</li>
@@ -26,10 +26,10 @@ const RTKAdvantagesSection = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-blue-200 bg-blue-50">
+        <Card className="border-gray-200 bg-white">
           <CardContent className="p-6">
-            <h3 className="font-semibold text-blue-800 mb-3">Application Benefits</h3>
-            <ul className="text-blue-700 space-y-2">
+            <h3 className="font-semibold text-gray-900 mb-3">Application Benefits</h3>
+            <ul className="text-gray-700 space-y-2">
               <li>• Corridor mapping without GCPs</li>
               <li>• Rapid emergency response surveys</li>
               <li>• Precision agriculture monitoring</li>

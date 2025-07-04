@@ -8,10 +8,10 @@ const RTKIntegrationSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-4">RTK Integration Methods</h2>
       
       <div className="space-y-6">
-        <Card className="border-l-4 border-l-purple-500">
+        <Card className="border-l-4 border-l-gray-400">
           <CardContent className="p-6">
             <div className="flex items-center mb-3">
-              <Settings className="h-6 w-6 text-purple-600 mr-3" />
+              <Settings className="h-6 w-6 text-gray-600 mr-3" />
               <h3 className="text-xl font-semibold text-gray-900">Onboard RTK Receivers</h3>
             </div>
             <p className="text-gray-700 mb-3">
@@ -41,10 +41,10 @@ const RTKIntegrationSection = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-l-4 border-l-green-500">
+        <Card className="border-l-4 border-l-gray-400">
           <CardContent className="p-6">
             <div className="flex items-center mb-3">
-              <MapPin className="h-6 w-6 text-green-600 mr-3" />
+              <MapPin className="h-6 w-6 text-gray-600 mr-3" />
               <h3 className="text-xl font-semibold text-gray-900">PPK Processing Workflow</h3>
             </div>
             <p className="text-gray-700 mb-3">

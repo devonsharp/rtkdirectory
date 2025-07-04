@@ -7,7 +7,7 @@ const QualityControlSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Quality Control and Validation</h2>
       
       <div className="space-y-6">
-        <Card className="border-l-4 border-l-green-500">
+        <Card className="border-l-4 border-l-gray-400">
           <CardContent className="p-6">
             <h3 className="text-xl font-semibold text-gray-900 mb-3">In-Flight Monitoring</h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -33,7 +33,7 @@ const QualityControlSection = () => {
           </CardContent>
         </Card>
 
-        <Card className="border-l-4 border-l-orange-500">
+        <Card className="border-l-4 border-l-gray-400">
           <CardContent className="p-6">
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Post-Flight Validation</h3>
             <div className="grid md:grid-cols-2 gap-4">
