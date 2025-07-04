@@ -1,19 +1,20 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Users, Globe, Layers, Building, Code, BookOpen } from "lucide-react";
+import { MapPin, Users, Globe, Layers, Building, Code, BookOpen, Map, Compass, Mountain, Palmtree, TreePine, Waves } from "lucide-react";
 import FeaturedServiceCard from "@/components/FeaturedServiceCard";
 import FeaturedHardwareCard from "@/components/FeaturedHardwareCard";
 
 const continents = [
-  { name: "All Providers", slug: "", count: 4 },
-  { name: "Global", slug: "global", count: 1 },
-  { name: "North America", slug: "north-america", count: 1 },
-  { name: "Europe", slug: "europe", count: 1 },
-  { name: "Asia", slug: "asia", count: 1 },
-  { name: "South America", slug: "south-america", count: 0 },
-  { name: "Africa", slug: "africa", count: 0 },
-  { name: "Oceania", slug: "oceania", count: 0 }
+  { name: "All Providers", slug: "", count: 4, icon: Map },
+  { name: "Global", slug: "global", count: 1, icon: Globe },
+  { name: "North America", slug: "north-america", count: 1, icon: Mountain },
+  { name: "Europe", slug: "europe", count: 1, icon: Building },
+  { name: "Asia", slug: "asia", count: 1, icon: Compass },
+  { name: "South America", slug: "south-america", count: 0, icon: Palmtree },
+  { name: "Africa", slug: "africa", count: 0, icon: TreePine },
+  { name: "Oceania", slug: "oceania", count: 0, icon: Waves }
 ];
 
 const HomePage = () => {
@@ -45,18 +46,24 @@ const HomePage = () => {
             Browse RTK Providers by Region
           </h2>
           <div className="grid grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {continents.map((continent) => (
-              <Link key={continent.slug} to={continent.slug === "" ? "/rtk-service-providers" : `/rtk-service-providers/${continent.slug}`}>
-                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-20 flex items-center justify-center">
-                  <CardContent className="p-4 text-center">
-                    <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
-                    <p className="text-xs text-gray-600">
-                      {continent.count} service{continent.count !== 1 ? 's' : ''}
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+            {continents.map((continent) => {
+              const IconComponent = continent.icon;
+              return (
+                <Link key={continent.slug} to={continent.slug === "" ? "/rtk-service-providers" : `/rtk-service-providers/${continent.slug}`}>
+                  <Card className="hover:shadow-lg transition-shadow cursor-pointer h-20 flex items-center justify-center">
+                    <CardContent className="p-4 text-center">
+                      <div className="flex items-center justify-center mb-1">
+                        <IconComponent className="h-4 w-4 text-blue-600 mr-1" />
+                        <h3 className="font-semibold text-gray-900 text-sm">{continent.name}</h3>
+                      </div>
+                      <p className="text-xs text-gray-600">
+                        {continent.count} service{continent.count !== 1 ? 's' : ''}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
