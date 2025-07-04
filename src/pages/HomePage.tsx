@@ -43,7 +43,7 @@ const HomePage = () => {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Browse RTK Providers by Region
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-4 gap-4 max-w-4xl mx-auto">
             {continents.map((continent) => (
               <Link key={continent.slug} to={continent.slug === "" ? "/rtk-service-providers" : `/rtk-service-providers/${continent.slug}`}>
                 <Card className="hover:shadow-lg transition-shadow cursor-pointer h-20 flex items-center justify-center">
