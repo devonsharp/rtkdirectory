@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -75,7 +76,12 @@ const HomePage = () => {
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
-            <Carousel className="w-full">
+            <Carousel 
+              className="w-full"
+              opts={{
+                loop: true
+              }}
+            >
               <CarouselContent>
                 <CarouselItem>
                   <FeaturedServiceCard />
@@ -103,7 +109,12 @@ const HomePage = () => {
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
-            <Carousel className="w-full">
+            <Carousel 
+              className="w-full"
+              opts={{
+                loop: true
+              }}
+            >
               <CarouselContent>
                 <CarouselItem>
                   <FeaturedHardwareCard />
