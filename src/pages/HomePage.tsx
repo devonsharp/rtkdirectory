@@ -1,8 +1,9 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Users, Globe, Layers, Building, Code, BookOpen } from "lucide-react";
+import FeaturedServiceCard from "@/components/FeaturedServiceCard";
+import FeaturedHardwareCard from "@/components/FeaturedHardwareCard";
 
 const continents = [
   { name: "All Providers", slug: "", count: 4 },
@@ -56,6 +57,41 @@ const HomePage = () => {
                 </Card>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured RTK Provider Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Featured RTK Correction Provider
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Discover our highlighted RTK correction service provider offering 
+              exceptional coverage and reliability worldwide.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <FeaturedServiceCard />
+          </div>
+        </div>
+      </section>
+
+      {/* Featured RTK Hardware Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Featured RTK Hardware
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Professional-grade RTK equipment for precision positioning and surveying applications.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <FeaturedHardwareCard />
           </div>
         </div>
       </section>

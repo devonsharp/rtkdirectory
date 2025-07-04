@@ -1,6 +1,6 @@
-
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ExternalLink } from "lucide-react";
+import FeaturedHardwareCard from "@/components/FeaturedHardwareCard";
 
 const RTKHardwarePage = () => {
   const baseStations = [
@@ -240,6 +240,21 @@ const RTKHardwarePage = () => {
             </div>
           </div>
         </div>
+
+        {/* Featured RTK Hardware Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Featured RTK Hardware
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Professional-grade RTK equipment recommended for precision positioning applications.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <FeaturedHardwareCard />
+          </div>
+        </section>
       </div>
     </div>
   );
