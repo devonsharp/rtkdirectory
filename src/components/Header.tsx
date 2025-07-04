@@ -33,7 +33,6 @@ const Header = () => {
                 <DropdownMenuContent 
                   align="start" 
                   className="bg-white shadow-lg border border-gray-200 z-50 group-hover:block"
-                  onOpenAutoFocus={(e) => e.preventDefault()}
                 >
                   <DropdownMenuItem asChild>
                     <Link to="/directory" className="w-full">
@@ -89,7 +88,6 @@ const Header = () => {
                 <DropdownMenuContent 
                   align="start" 
                   className="bg-white shadow-lg border border-gray-200 z-50"
-                  onOpenAutoFocus={(e) => e.preventDefault()}
                 >
                   <DropdownMenuItem asChild>
                     <Link to="/knowledge-base" className="w-full">
@@ -122,7 +120,6 @@ const Header = () => {
               <DropdownMenuContent 
                 align="end" 
                 className="bg-white shadow-lg border border-gray-200 z-50"
-                onOpenAutoFocus={(e) => e.preventDefault()}
               >
                 <DropdownMenuItem asChild>
                   <Link to="/contact" className="w-full">
