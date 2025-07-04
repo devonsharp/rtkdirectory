@@ -1,20 +1,10 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import HoverDropdown from "./HoverDropdown";
 
 const Header = () => {
-  const [providersOpen, setProvidersOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
-
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,130 +17,83 @@ const Header = () => {
             <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
               Home
             </Link>
-            <div 
-              className="group relative"
-              onMouseEnter={() => setProvidersOpen(true)}
-              onMouseLeave={() => setProvidersOpen(false)}
-            >
-              <DropdownMenu open={providersOpen} onOpenChange={setProvidersOpen}>
-                <DropdownMenuTrigger 
-                  className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center group-hover:text-blue-600"
-                >
+            
+            <HoverDropdown
+              trigger={
+                <div className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center">
                   RTK Providers
                   <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent 
-                  align="start" 
-                  className="bg-white shadow-lg border border-gray-200 z-50"
-                >
-                  <DropdownMenuItem asChild>
-                    <Link to="/directory" className="w-full">
-                      All Providers
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/directory/global" className="w-full">
-                      Global
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/directory/north-america" className="w-full">
-                      North America
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/directory/europe" className="w-full">
-                      Europe
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/directory/asia" className="w-full">
-                      Asia
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/directory/south-america" className="w-full">
-                      South America
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/directory/africa" className="w-full">
-                      Africa
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/directory/oceania" className="w-full">
-                      Oceania
-                    </Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-            <div 
-              className="group relative"
-              onMouseEnter={() => setResourcesOpen(true)}
-              onMouseLeave={() => setResourcesOpen(false)}
+                </div>
+              }
             >
-              <DropdownMenu open={resourcesOpen} onOpenChange={setResourcesOpen}>
-                <DropdownMenuTrigger 
-                  className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center group-hover:text-blue-600"
-                >
+              <div className="py-1">
+                <Link to="/directory" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  All Providers
+                </Link>
+                <Link to="/directory/global" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Global
+                </Link>
+                <Link to="/directory/north-america" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  North America
+                </Link>
+                <Link to="/directory/europe" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Europe
+                </Link>
+                <Link to="/directory/asia" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Asia
+                </Link>
+                <Link to="/directory/south-america" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  South America
+                </Link>
+                <Link to="/directory/africa" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Africa
+                </Link>
+                <Link to="/directory/oceania" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Oceania
+                </Link>
+              </div>
+            </HoverDropdown>
+            
+            <HoverDropdown
+              trigger={
+                <div className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center">
                   Resources
                   <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent 
-                  align="start" 
-                  className="bg-white shadow-lg border border-gray-200 z-50"
-                >
-                  <DropdownMenuItem asChild>
-                    <Link to="/knowledge-base" className="w-full">
-                      Knowledge Base
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/blog" className="w-full">
-                      Blog
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/glossary" className="w-full">
-                      Glossary
-                    </Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+                </div>
+              }
+            >
+              <div className="py-1">
+                <Link to="/knowledge-base" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Knowledge Base
+                </Link>
+                <Link to="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Blog
+                </Link>
+                <Link to="/glossary" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Glossary
+                </Link>
+              </div>
+            </HoverDropdown>
           </nav>
 
-          <div 
-            className="group relative"
-            onMouseEnter={() => setContactOpen(true)}
-            onMouseLeave={() => setContactOpen(false)}
+          <HoverDropdown
+            align="end"
+            trigger={
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                Contact
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </Button>
+            }
           >
-            <DropdownMenu open={contactOpen} onOpenChange={setContactOpen}>
-              <DropdownMenuTrigger asChild>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white group-hover:bg-blue-700">
-                  Contact
-                  <ChevronDown className="ml-2 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                align="end" 
-                className="bg-white shadow-lg border border-gray-200 z-50"
-              >
-                <DropdownMenuItem asChild>
-                  <Link to="/contact" className="w-full">
-                    Contact Us
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/submit-listing" className="w-full">
-                    Submit Listing
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+            <div className="py-1">
+              <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                Contact Us
+              </Link>
+              <Link to="/submit-listing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                Submit Listing
+              </Link>
+            </div>
+          </HoverDropdown>
         </div>
       </div>
     </header>
