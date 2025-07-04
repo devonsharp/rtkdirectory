@@ -7,6 +7,7 @@ import RegionBrowser from "@/components/RegionBrowser";
 import ListingsTable from "@/components/ListingsTable";
 import DirectoryCTA from "@/components/DirectoryCTA";
 import FeaturedServiceCard from "@/components/FeaturedServiceCard";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 // Enhanced sample data with new fields
 const sampleListings = [
@@ -81,7 +82,7 @@ const DirectoryPage = () => {
   const [pricingFilter, setPricingFilter] = useState("all");
   const [regionFilter, setRegionFilter] = useState("all");
   const [countryFilter, setCountryFilter] = useState("all");
-  const [viewMode, setViewMode] = useState<"grid" | "list">("list");
+  const [viewMode, setViewMode<"grid" | "list">("list");
   
   const filteredListings = sampleListings.filter(listing => {
     const matchesSearch = listing.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -170,7 +171,25 @@ const DirectoryPage = () => {
             exceptional coverage and reliability worldwide.
           </p>
         </div>
-        <FeaturedServiceCard />
+        <div className="max-w-4xl mx-auto">
+          <Carousel 
+            className="w-full"
+            opts={{
+              loop: true
+            }}
+          >
+            <CarouselContent>
+              <CarouselItem>
+                <FeaturedServiceCard />
+              </CarouselItem>
+              <CarouselItem>
+                <FeaturedServiceCard isSecondCard={true} />
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
       </section>
 
       <DirectoryCTA />

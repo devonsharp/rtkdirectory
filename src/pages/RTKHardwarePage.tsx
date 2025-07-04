@@ -1,6 +1,7 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ExternalLink } from "lucide-react";
 import FeaturedHardwareCard from "@/components/FeaturedHardwareCard";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const RTKHardwarePage = () => {
   const baseStations = [
@@ -252,7 +253,23 @@ const RTKHardwarePage = () => {
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
-            <FeaturedHardwareCard />
+            <Carousel 
+              className="w-full"
+              opts={{
+                loop: true
+              }}
+            >
+              <CarouselContent>
+                <CarouselItem>
+                  <FeaturedHardwareCard />
+                </CarouselItem>
+                <CarouselItem>
+                  <FeaturedHardwareCard isSecondCard={true} />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </section>
       </div>
