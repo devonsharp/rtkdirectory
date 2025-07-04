@@ -163,21 +163,6 @@ const RTKHardwarePage = () => {
             </div>
           </div>
         </div>
-
-        <div className="text-center">
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Hardware Provider Directory Coming Soon
-            </h2>
-            <p className="text-gray-600 mb-6">
-              We're building a comprehensive directory of RTK hardware providers. 
-              If you're a manufacturer or distributor, get in touch to be featured.
-            </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
-              Submit Your Hardware Listing
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
