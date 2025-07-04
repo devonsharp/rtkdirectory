@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -61,7 +60,7 @@ const BlogPage = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-8">
         {blogPosts.map((post) => (
           <Card key={post.id} className="border-gray-200 hover:shadow-lg transition-shadow">
             <CardHeader>
