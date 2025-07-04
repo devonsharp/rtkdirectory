@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import HoverDropdown from "./HoverDropdown";
 
 const Header = () => {
@@ -108,74 +108,104 @@ const Header = () => {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-7 w-7" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4 mt-6">
-                <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors text-lg">
-                  Home
-                </Link>
+                <SheetClose asChild>
+                  <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors text-lg">
+                    Home
+                  </Link>
+                </SheetClose>
                 
                 <div className="space-y-2">
                   <div className="text-gray-700 font-medium text-lg">RTK Corrections Providers</div>
                   <div className="pl-4 space-y-2">
-                    <Link to="/rtk-service-providers" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      All Providers
-                    </Link>
-                    <Link to="/rtk-service-providers/global" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Global
-                    </Link>
-                    <Link to="/rtk-service-providers/north-america" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      North America
-                    </Link>
-                    <Link to="/rtk-service-providers/europe" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Europe
-                    </Link>
-                    <Link to="/rtk-service-providers/asia" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Asia
-                    </Link>
-                    <Link to="/rtk-service-providers/south-america" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      South America
-                    </Link>
-                    <Link to="/rtk-service-providers/africa" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Africa
-                    </Link>
-                    <Link to="/rtk-service-providers/oceania" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Oceania
-                    </Link>
+                    <SheetClose asChild>
+                      <Link to="/rtk-service-providers" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        All Providers
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/rtk-service-providers/global" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Global
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/rtk-service-providers/north-america" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        North America
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/rtk-service-providers/europe" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Europe
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/rtk-service-providers/asia" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Asia
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/rtk-service-providers/south-america" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        South America
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/rtk-service-providers/africa" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Africa
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/rtk-service-providers/oceania" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Oceania
+                      </Link>
+                    </SheetClose>
                   </div>
                 </div>
 
-                <Link to="/rtk-hardware" className="text-gray-700 hover:text-blue-600 transition-colors text-lg">
-                  RTK Hardware Providers
-                </Link>
+                <SheetClose asChild>
+                  <Link to="/rtk-hardware" className="text-gray-700 hover:text-blue-600 transition-colors text-lg">
+                    RTK Hardware Providers
+                  </Link>
+                </SheetClose>
                 
                 <div className="space-y-2">
                   <div className="text-gray-700 font-medium text-lg">Resources</div>
                   <div className="pl-4 space-y-2">
-                    <Link to="/knowledge-base" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Knowledge Base
-                    </Link>
-                    <Link to="/blog" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Blog
-                    </Link>
-                    <Link to="/glossary" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Glossary
-                    </Link>
+                    <SheetClose asChild>
+                      <Link to="/knowledge-base" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Knowledge Base
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/blog" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Blog
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/glossary" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Glossary
+                      </Link>
+                    </SheetClose>
                   </div>
                 </div>
 
                 <div className="space-y-2 pt-4 border-t">
                   <div className="text-gray-700 font-medium text-lg">Contact</div>
                   <div className="pl-4 space-y-2">
-                    <Link to="/contact" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Contact Us
-                    </Link>
-                    <Link to="/submit-listing" className="block text-gray-600 hover:text-blue-600 transition-colors">
-                      Submit Listing
-                    </Link>
+                    <SheetClose asChild>
+                      <Link to="/contact" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Contact Us
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link to="/submit-listing" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                        Submit Listing
+                      </Link>
+                    </SheetClose>
                   </div>
                 </div>
               </nav>
