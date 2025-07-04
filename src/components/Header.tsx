@@ -1,6 +1,13 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 const Header = () => {
   return (
@@ -21,16 +28,28 @@ const Header = () => {
             <Link to="/blog" className="text-gray-700 hover:text-blue-600 transition-colors">
               Blog
             </Link>
-            <Link to="/submit-listing" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Submit Listing
-            </Link>
           </nav>
 
-          <Link to="/submit-listing">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-              Contact
-            </Button>
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                Contact
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem asChild>
+                <Link to="/contact" className="w-full">
+                  Contact Us
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/submit-listing" className="w-full">
+                  Submit Listing
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </header>

@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import DirectoryPage from "./pages/DirectoryPage";
 import ContinentDirectory from "./pages/ContinentDirectory";
+import ContactPage from "./pages/ContactPage";
 import SubmitListingPage from "./pages/SubmitListingPage";
 import BlogPage from "./pages/BlogPage";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/directory" element={<DirectoryPage />} />
               <Route path="/directory/:continent" element={<ContinentDirectory />} />
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="/submit-listing" element={<SubmitListingPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="*" element={<NotFound />} />
