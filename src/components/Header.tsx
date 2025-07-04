@@ -22,9 +22,54 @@ const Header = () => {
             <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
               Home
             </Link>
-            <Link to="/directory" className="text-gray-700 hover:text-blue-600 transition-colors">
-              RTK Providers
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center">
+                RTK Providers
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="bg-white">
+                <DropdownMenuItem asChild>
+                  <Link to="/directory" className="w-full">
+                    All Providers
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/directory/global" className="w-full">
+                    Global
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/directory/north-america" className="w-full">
+                    North America
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/directory/europe" className="w-full">
+                    Europe
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/directory/asia" className="w-full">
+                    Asia
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/directory/south-america" className="w-full">
+                    South America
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/directory/africa" className="w-full">
+                    Africa
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/directory/oceania" className="w-full">
+                    Oceania
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center">
                 Resources
