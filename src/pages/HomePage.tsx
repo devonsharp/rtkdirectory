@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Users, Globe } from "lucide-react";
+import { MapPin, Users, Globe, Layers, Building, Code } from "lucide-react";
 
 const HomePage = () => {
   return (
@@ -57,11 +57,44 @@ const HomePage = () => {
             
             <Card className="border-gray-200 hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
+                <Layers className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3">GIS Professionals</h3>
+                <p className="text-gray-600">
+                  Geographic Information Systems specialists who need precise positioning 
+                  data for spatial analysis, mapping, and data collection projects.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Building className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3">Construction & Utility Companies</h3>
+                <p className="text-gray-600">
+                  Construction firms and utility companies requiring accurate positioning 
+                  for infrastructure projects, asset management, and field operations.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
                 <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">GNSS Users</h3>
                 <p className="text-gray-600">
                   Engineers, researchers, and professionals using GNSS equipment 
                   who need reliable correction services for their applications.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-gray-200 hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <Code className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3">GNSS Developers</h3>
+                <p className="text-gray-600">
+                  Software developers and hardware engineers creating GNSS applications 
+                  and devices that integrate RTK correction capabilities.
                 </p>
               </CardContent>
             </Card>
