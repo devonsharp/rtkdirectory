@@ -81,7 +81,7 @@ const DirectoryPage = () => {
   const [pricingFilter, setPricingFilter] = useState("all");
   const [regionFilter, setRegionFilter] = useState("all");
   const [countryFilter, setCountryFilter] = useState("all");
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("list");
   
   const filteredListings = sampleListings.filter(listing => {
     const matchesSearch = listing.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
