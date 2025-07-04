@@ -1,7 +1,8 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import HoverDropdown from "./HoverDropdown";
 
 const Header = () => {
@@ -13,6 +14,7 @@ const Header = () => {
             <span className="text-2xl font-bold text-blue-600">RTKDirectory.com</span>
           </Link>
           
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
               Home
@@ -80,24 +82,105 @@ const Header = () => {
             </HoverDropdown>
           </nav>
 
-          <HoverDropdown
-            align="end"
-            trigger={
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                Contact
-                <ChevronDown className="ml-2 h-4 w-4" />
+          {/* Desktop Contact Button */}
+          <div className="hidden md:block">
+            <HoverDropdown
+              align="end"
+              trigger={
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  Contact
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              }
+            >
+              <div className="py-1">
+                <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Contact Us
+                </Link>
+                <Link to="/submit-listing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Submit Listing
+                </Link>
+              </div>
+            </HoverDropdown>
+          </div>
+
+          {/* Mobile Menu */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle menu</span>
               </Button>
-            }
-          >
-            <div className="py-1">
-              <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                Contact Us
-              </Link>
-              <Link to="/submit-listing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                Submit Listing
-              </Link>
-            </div>
-          </HoverDropdown>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <nav className="flex flex-col space-y-4 mt-6">
+                <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors text-lg">
+                  Home
+                </Link>
+                
+                <div className="space-y-2">
+                  <div className="text-gray-700 font-medium text-lg">RTK Corrections Providers</div>
+                  <div className="pl-4 space-y-2">
+                    <Link to="/rtk-service-providers" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      All Providers
+                    </Link>
+                    <Link to="/rtk-service-providers/global" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Global
+                    </Link>
+                    <Link to="/rtk-service-providers/north-america" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      North America
+                    </Link>
+                    <Link to="/rtk-service-providers/europe" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Europe
+                    </Link>
+                    <Link to="/rtk-service-providers/asia" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Asia
+                    </Link>
+                    <Link to="/rtk-service-providers/south-america" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      South America
+                    </Link>
+                    <Link to="/rtk-service-providers/africa" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Africa
+                    </Link>
+                    <Link to="/rtk-service-providers/oceania" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Oceania
+                    </Link>
+                  </div>
+                </div>
+
+                <Link to="/rtk-hardware" className="text-gray-700 hover:text-blue-600 transition-colors text-lg">
+                  RTK Hardware Providers
+                </Link>
+                
+                <div className="space-y-2">
+                  <div className="text-gray-700 font-medium text-lg">Resources</div>
+                  <div className="pl-4 space-y-2">
+                    <Link to="/knowledge-base" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Knowledge Base
+                    </Link>
+                    <Link to="/blog" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Blog
+                    </Link>
+                    <Link to="/glossary" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Glossary
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="space-y-2 pt-4 border-t">
+                  <div className="text-gray-700 font-medium text-lg">Contact</div>
+                  <div className="pl-4 space-y-2">
+                    <Link to="/contact" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Contact Us
+                    </Link>
+                    <Link to="/submit-listing" className="block text-gray-600 hover:text-blue-600 transition-colors">
+                      Submit Listing
+                    </Link>
+                  </div>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
