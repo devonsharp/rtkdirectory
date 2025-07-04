@@ -130,20 +130,20 @@ const DirectoryPage = () => {
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-600">View:</span>
             <Toggle
-              pressed={viewMode === "grid"}
-              onPressedChange={() => setViewMode("grid")}
-              aria-label="Grid view"
-              className="data-[state=on]:bg-blue-100 data-[state=on]:text-blue-600"
-            >
-              <Grid3X3 className="h-4 w-4" />
-            </Toggle>
-            <Toggle
               pressed={viewMode === "list"}
               onPressedChange={() => setViewMode("list")}
               aria-label="Table view"
               className="data-[state=on]:bg-blue-100 data-[state=on]:text-blue-600"
             >
               <List className="h-4 w-4" />
+            </Toggle>
+            <Toggle
+              pressed={viewMode === "grid"}
+              onPressedChange={() => setViewMode("grid")}
+              aria-label="Grid view"
+              className="data-[state=on]:bg-blue-100 data-[state=on]:text-blue-600"
+            >
+              <Grid3X3 className="h-4 w-4" />
             </Toggle>
           </div>
         </div>
