@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +12,7 @@ const FeaturedServiceCard = () => {
     email: "contact@globalrtkpro.com",
     website: "https://globalrtkpro.com",
     description: "Worldwide RTK correction service with satellite and ground-based reference stations providing global coverage with 99.9% uptime guarantee.",
-    pricing: "paid" as const,
+    pricing: "paid" as "free" | "paid",
     priceDetails: "$49.99/month",
     coverageMapLink: "https://globalrtkpro.com/global-coverage",
     freeTrialLink: "https://globalrtkpro.com/free-trial",
