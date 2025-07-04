@@ -23,7 +23,10 @@ const Header = () => {
               Home
             </Link>
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center">
+              <DropdownMenuTrigger 
+                className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center"
+                onMouseEnter={(e) => e.currentTarget.click()}
+              >
                 RTK Providers
                 <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
@@ -71,7 +74,10 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center">
+              <DropdownMenuTrigger 
+                className="text-gray-700 hover:text-blue-600 transition-colors inline-flex items-center"
+                onMouseEnter={(e) => e.currentTarget.click()}
+              >
                 Resources
                 <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
@@ -96,7 +102,10 @@ const Header = () => {
           </nav>
 
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger 
+              asChild
+              onMouseEnter={(e) => e.currentTarget.click()}
+            >
               <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                 Contact
                 <ChevronDown className="ml-2 h-4 w-4" />
