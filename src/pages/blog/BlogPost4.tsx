@@ -30,43 +30,38 @@ const BlogPost4 = () => {
             Today's GNSS ecosystem includes multiple fully operational constellations providing global coverage:
           </p>
           
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <Card className="border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <Satellite className="h-6 w-6 text-gray-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">GPS (USA)</h3>
-                </div>
-                <p className="text-gray-700">31 satellites, modernization ongoing with new signals</p>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <Satellite className="h-6 w-6 text-gray-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">GLONASS (Russia)</h3>
-                </div>
-                <p className="text-gray-700">24 satellites, CDMA modernization in progress</p>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <Satellite className="h-6 w-6 text-gray-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">Galileo (EU)</h3>
-                </div>
-                <p className="text-gray-700">30 satellites, high-accuracy services available</p>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <Satellite className="h-6 w-6 text-gray-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">BeiDou (China)</h3>
-                </div>
-                <p className="text-gray-700">35 satellites, global coverage completed in 2020</p>
-              </CardContent>
-            </Card>
+          <div className="mb-8 space-y-4">
+            <div className="border-l-4 border-gray-300 pl-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+                <Satellite className="h-5 w-5 text-gray-600 mr-2" />
+                GPS (USA)
+              </h3>
+              <p className="text-gray-700">31 satellites providing global coverage with ongoing modernization efforts introducing new signals and enhanced capabilities.</p>
+            </div>
+            
+            <div className="border-l-4 border-gray-300 pl-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+                <Satellite className="h-5 w-5 text-gray-600 mr-2" />
+                GLONASS (Russia)
+              </h3>
+              <p className="text-gray-700">24 satellites offering global positioning services with CDMA modernization currently in progress to improve accuracy and reliability.</p>
+            </div>
+            
+            <div className="border-l-4 border-gray-300 pl-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+                <Satellite className="h-5 w-5 text-gray-600 mr-2" />
+                Galileo (EU)
+              </h3>
+              <p className="text-gray-700">30 satellites delivering high-accuracy services across Europe and beyond, with commercial and safety-critical applications already operational.</p>
+            </div>
+            
+            <div className="border-l-4 border-gray-300 pl-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center">
+                <Satellite className="h-5 w-5 text-gray-600 mr-2" />
+                BeiDou (China)
+              </h3>
+              <p className="text-gray-700">35 satellites providing global coverage since 2020, offering both civilian and military positioning services with regional enhancements in Asia-Pacific.</p>
+            </div>
           </div>
         </section>
 
@@ -148,36 +143,30 @@ const BlogPost4 = () => {
             The GNSS landscape continues to evolve with constellation modernization and new satellite systems:
           </p>
           
-          <div className="space-y-6">
-            <Card className="border border-gray-200">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">GPS Modernization</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  GPS III satellites bring improved signal power, new L1C signal, and enhanced accuracy. 
-                  The constellation will be fully modernized by 2030.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="mb-8 space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">GPS Modernization</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                GPS III satellites bring improved signal power, new L1C signal, and enhanced accuracy. The constellation will be fully modernized by 2030, 
+                featuring advanced anti-jamming capabilities and better civilian signal availability.
+              </p>
+            </div>
 
-            <Card className="border border-gray-200">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Galileo Second Generation</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Galileo G2 satellites will feature enhanced signal power, improved accuracy, and new services 
-                  for professional applications.
-                </p>
-              </CardContent>
-            </Card>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Galileo Second Generation</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Galileo G2 satellites will feature enhanced signal power, improved accuracy, and new services for professional applications. 
+                The system will offer unprecedented positioning performance for European users and global applications requiring high precision.
+              </p>
+            </div>
 
-            <Card className="border border-gray-200">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Regional Augmentation Systems</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  QZSS (Japan), NavIC (India), and other regional systems are expanding to provide enhanced 
-                  regional coverage and specialized services.
-                </p>
-              </CardContent>
-            </Card>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Regional Augmentation Systems</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                QZSS (Japan), NavIC (India), and other regional systems are expanding to provide enhanced regional coverage and specialized services. 
+                These systems complement global constellations with improved accuracy and availability in their respective regions.
+              </p>
+            </div>
           </div>
         </section>
 
