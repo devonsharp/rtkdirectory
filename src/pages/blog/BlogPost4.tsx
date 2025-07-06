@@ -2,28 +2,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Satellite, Zap, Globe, Cpu } from "lucide-react";
+import BlogPostHeader from "@/components/blog/BlogPostHeader";
+import { Satellite, Zap, Globe, Cpu } from "lucide-react";
 
 const BlogPost4 = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8">
-        <ArrowLeft className="h-4 w-4 mr-2" />
-        Back to Blog
-      </Link>
+      <BlogPostHeader 
+        title="The Future of GNSS and RTK Technology"
+        date="February 28, 2024"
+        readTime="10 min read"
+      />
 
       <article className="prose prose-lg max-w-none">
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            The Future of GNSS and RTK Technology
-          </h1>
-          <div className="flex items-center text-gray-500 space-x-2 mb-6">
-            <span>February 28, 2024</span>
-            <span>•</span>
-            <span>10 min read</span>
-          </div>
-        </header>
-
         <Card className="mb-8">
           <CardContent className="p-6">
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -33,146 +24,155 @@ const BlogPost4 = () => {
           </CardContent>
         </Card>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Current State of GNSS Technology</h2>
-          <p className="text-gray-700 mb-4">
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Current State of GNSS Technology</h2>
+          <p className="text-gray-700 mb-6 text-lg leading-relaxed">
             Today's GNSS ecosystem includes multiple fully operational constellations providing global coverage:
           </p>
           
-          <div className="grid md:grid-cols-2 gap-4 mb-6">
-            <Card>
-              <CardContent className="p-4">
-                <div className="flex items-center mb-2">
-                  <Satellite className="h-5 w-5 text-blue-600 mr-2" />
-                  <h3 className="font-semibold text-gray-900">GPS (USA)</h3>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <Card className="border border-gray-200">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3">
+                  <Satellite className="h-6 w-6 text-gray-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-900">GPS (USA)</h3>
                 </div>
-                <p className="text-gray-700 text-sm">31 satellites, modernization ongoing with new signals</p>
+                <p className="text-gray-700">31 satellites, modernization ongoing with new signals</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="p-4">
-                <div className="flex items-center mb-2">
-                  <Satellite className="h-5 w-5 text-red-600 mr-2" />
-                  <h3 className="font-semibold text-gray-900">GLONASS (Russia)</h3>
+            <Card className="border border-gray-200">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3">
+                  <Satellite className="h-6 w-6 text-gray-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-900">GLONASS (Russia)</h3>
                 </div>
-                <p className="text-gray-700 text-sm">24 satellites, CDMA modernization in progress</p>
+                <p className="text-gray-700">24 satellites, CDMA modernization in progress</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="p-4">
-                <div className="flex items-center mb-2">
-                  <Satellite className="h-5 w-5 text-green-600 mr-2" />
-                  <h3 className="font-semibold text-gray-900">Galileo (EU)</h3>
+            <Card className="border border-gray-200">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3">
+                  <Satellite className="h-6 w-6 text-gray-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-900">Galileo (EU)</h3>
                 </div>
-                <p className="text-gray-700 text-sm">30 satellites, high-accuracy services available</p>
+                <p className="text-gray-700">30 satellites, high-accuracy services available</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="p-4">
-                <div className="flex items-center mb-2">
-                  <Satellite className="h-5 w-5 text-yellow-600 mr-2" />
-                  <h3 className="font-semibold text-gray-900">BeiDou (China)</h3>
+            <Card className="border border-gray-200">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3">
+                  <Satellite className="h-6 w-6 text-gray-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-900">BeiDou (China)</h3>
                 </div>
-                <p className="text-gray-700 text-sm">35 satellites, global coverage completed in 2020</p>
+                <p className="text-gray-700">35 satellites, global coverage completed in 2020</p>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Emerging Trends and Technologies</h2>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Emerging Trends and Technologies</h2>
           
-          <div className="space-y-6">
-            <Card className="border-l-4 border-l-purple-500">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <Zap className="h-6 w-6 text-purple-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">Multi-Frequency Processing</h3>
+          <div className="space-y-8">
+            <Card className="border border-gray-200">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-4">
+                  <Zap className="h-7 w-7 text-gray-600 mr-4" />
+                  <h3 className="text-2xl font-semibold text-gray-900">Multi-Frequency Processing</h3>
                 </div>
-                <p className="text-gray-700 mb-3">
+                <p className="text-gray-700 mb-4 text-lg leading-relaxed">
                   Next-generation receivers are leveraging multiple frequencies from each constellation to improve accuracy, 
                   reduce convergence time, and enhance reliability in challenging environments.
                 </p>
-                <ul className="text-gray-700 text-sm space-y-1">
-                  <li>• Faster ambiguity resolution</li>
-                  <li>• Better ionospheric modeling</li>
-                  <li>• Improved multipath mitigation</li>
-                  <li>• Enhanced performance in urban canyons</li>
-                </ul>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-900 mb-2">Key Benefits:</h4>
+                  <ul className="text-gray-700 space-y-1">
+                    <li>• Faster ambiguity resolution</li>
+                    <li>• Better ionospheric modeling</li>
+                    <li>• Improved multipath mitigation</li>
+                    <li>• Enhanced performance in urban canyons</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-blue-500">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <Globe className="h-6 w-6 text-blue-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">Precise Point Positioning (PPP)</h3>
+            <Card className="border border-gray-200">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-4">
+                  <Globe className="h-7 w-7 text-gray-600 mr-4" />
+                  <h3 className="text-2xl font-semibold text-gray-900">Precise Point Positioning (PPP)</h3>
                 </div>
-                <p className="text-gray-700 mb-3">
+                <p className="text-gray-700 mb-4 text-lg leading-relaxed">
                   PPP technology is advancing rapidly, offering RTK-level accuracy without the need for local reference stations. 
                   This could revolutionize positioning in remote areas and reduce infrastructure requirements.
                 </p>
-                <ul className="text-gray-700 text-sm space-y-1">
-                  <li>• PPP-RTK hybrid solutions</li>
-                  <li>• Faster convergence times</li>
-                  <li>• Global correction services</li>
-                  <li>• Reduced infrastructure costs</li>
-                </ul>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-900 mb-2">Advantages:</h4>
+                  <ul className="text-gray-700 space-y-1">
+                    <li>• PPP-RTK hybrid solutions</li>
+                    <li>• Faster convergence times</li>
+                    <li>• Global correction services</li>
+                    <li>• Reduced infrastructure costs</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-green-500">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-3">
-                  <Cpu className="h-6 w-6 text-green-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-gray-900">Artificial Intelligence Integration</h3>
+            <Card className="border border-gray-200">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-4">
+                  <Cpu className="h-7 w-7 text-gray-600 mr-4" />
+                  <h3 className="text-2xl font-semibold text-gray-900">Artificial Intelligence Integration</h3>
                 </div>
-                <p className="text-gray-700 mb-3">
+                <p className="text-gray-700 mb-4 text-lg leading-relaxed">
                   AI and machine learning are being integrated into GNSS processing to improve signal quality assessment, 
                   error prediction, and adaptive algorithms for challenging environments.
                 </p>
-                <ul className="text-gray-700 text-sm space-y-1">
-                  <li>• Intelligent multipath detection</li>
-                  <li>• Adaptive filtering algorithms</li>
-                  <li>• Predictive error modeling</li>
-                  <li>• Automated quality control</li>
-                </ul>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-900 mb-2">Applications:</h4>
+                  <ul className="text-gray-700 space-y-1">
+                    <li>• Intelligent multipath detection</li>
+                    <li>• Adaptive filtering algorithms</li>
+                    <li>• Predictive error modeling</li>
+                    <li>• Automated quality control</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Next-Generation Satellite Constellations</h2>
-          <p className="text-gray-700 mb-4">
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Next-Generation Satellite Constellations</h2>
+          <p className="text-gray-700 mb-6 text-lg leading-relaxed">
             The GNSS landscape continues to evolve with constellation modernization and new satellite systems:
           </p>
           
-          <div className="space-y-4">
-            <Card className="bg-blue-50 border-blue-200">
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-blue-800 mb-2">GPS Modernization</h3>
-                <p className="text-blue-700 text-sm">
+          <div className="space-y-6">
+            <Card className="border border-gray-200">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">GPS Modernization</h3>
+                <p className="text-gray-700 leading-relaxed">
                   GPS III satellites bring improved signal power, new L1C signal, and enhanced accuracy. 
                   The constellation will be fully modernized by 2030.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-green-50 border-green-200">
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-green-800 mb-2">Galileo Second Generation</h3>
-                <p className="text-green-700 text-sm">
+            <Card className="border border-gray-200">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Galileo Second Generation</h3>
+                <p className="text-gray-700 leading-relaxed">
                   Galileo G2 satellites will feature enhanced signal power, improved accuracy, and new services 
                   for professional applications.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-purple-50 border-purple-200">
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-purple-800 mb-2">Regional Augmentation Systems</h3>
-                <p className="text-purple-700 text-sm">
+            <Card className="border border-gray-200">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Regional Augmentation Systems</h3>
+                <p className="text-gray-700 leading-relaxed">
                   QZSS (Japan), NavIC (India), and other regional systems are expanding to provide enhanced 
                   regional coverage and specialized services.
                 </p>
@@ -181,78 +181,90 @@ const BlogPost4 = () => {
           </div>
         </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Revolutionary Applications on the Horizon</h2>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Revolutionary Applications on the Horizon</h2>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card>
+          <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="border border-gray-200">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Autonomous Vehicles</h3>
-                <p className="text-gray-700 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Autonomous Vehicles</h3>
+                <p className="text-gray-700 mb-4 leading-relaxed">
                   Next-generation RTK systems will enable lane-level positioning for autonomous vehicles, 
                   requiring sub-decimeter accuracy and high reliability.
                 </p>
-                <ul className="text-gray-700 text-sm space-y-1">
-                  <li>• Lane-level positioning</li>
-                  <li>• Integrity monitoring</li>
-                  <li>• Urban canyon performance</li>
-                  <li>• Seamless indoor/outdoor</li>
-                </ul>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-2">Requirements:</h4>
+                  <ul className="text-gray-700 text-sm space-y-1">
+                    <li>• Lane-level positioning</li>
+                    <li>• Integrity monitoring</li>
+                    <li>• Urban canyon performance</li>
+                    <li>• Seamless indoor/outdoor</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border border-gray-200">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">IoT and Sensor Networks</h3>
-                <p className="text-gray-700 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">IoT and Sensor Networks</h3>
+                <p className="text-gray-700 mb-4 leading-relaxed">
                   Miniaturized RTK receivers will enable precise positioning for IoT devices, 
                   environmental sensors, and smart city infrastructure.
                 </p>
-                <ul className="text-gray-700 text-sm space-y-1">
-                  <li>• Ultra-low power consumption</li>
-                  <li>• Miniaturized form factors</li>
-                  <li>• Integrated sensor fusion</li>
-                  <li>• Edge computing capabilities</li>
-                </ul>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-2">Features:</h4>
+                  <ul className="text-gray-700 text-sm space-y-1">
+                    <li>• Ultra-low power consumption</li>
+                    <li>• Miniaturized form factors</li>
+                    <li>• Integrated sensor fusion</li>
+                    <li>• Edge computing capabilities</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border border-gray-200">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Augmented Reality</h3>
-                <p className="text-gray-700 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Augmented Reality</h3>
+                <p className="text-gray-700 mb-4 leading-relaxed">
                   AR applications will leverage precise positioning to overlay digital information 
                   accurately on the real world for construction, maintenance, and visualization.
                 </p>
-                <ul className="text-gray-700 text-sm space-y-1">
-                  <li>• Millimeter-level registration</li>
-                  <li>• Real-time tracking</li>
-                  <li>• Multi-user collaboration</li>
-                  <li>• Indoor/outdoor continuity</li>
-                </ul>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-2">Capabilities:</h4>
+                  <ul className="text-gray-700 text-sm space-y-1">
+                    <li>• Millimeter-level registration</li>
+                    <li>• Real-time tracking</li>
+                    <li>• Multi-user collaboration</li>
+                    <li>• Indoor/outdoor continuity</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border border-gray-200">
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Precision Agriculture 4.0</h3>
-                <p className="text-gray-700 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Precision Agriculture 4.0</h3>
+                <p className="text-gray-700 mb-4 leading-relaxed">
                   Advanced RTK systems will enable fully autonomous farming operations with 
                   centimeter-level precision for optimal crop management.
                 </p>
-                <ul className="text-gray-700 text-sm space-y-1">
-                  <li>• Autonomous machinery</li>
-                  <li>• Precision seeding/spraying</li>
-                  <li>• Yield optimization</li>
-                  <li>• Environmental monitoring</li>
-                </ul>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-medium text-gray-900 mb-2">Applications:</h4>
+                  <ul className="text-gray-700 text-sm space-y-1">
+                    <li>• Autonomous machinery</li>
+                    <li>• Precision seeding/spraying</li>
+                    <li>• Yield optimization</li>
+                    <li>• Environmental monitoring</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Challenges and Opportunities</h2>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Challenges and Opportunities</h2>
           
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="border-red-200 bg-red-50">
@@ -285,34 +297,49 @@ const BlogPost4 = () => {
           </div>
         </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Preparing for the Future</h2>
-          <p className="text-gray-700 mb-4">
-            Organizations should prepare for the evolving GNSS landscape by:
-          </p>
-          <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
-            <li>Investing in multi-constellation, multi-frequency receivers</li>
-            <li>Developing expertise in advanced processing techniques</li>
-            <li>Planning for infrastructure upgrades and modernization</li>
-            <li>Exploring new applications and market opportunities</li>
-            <li>Building partnerships with technology providers</li>
-            <li>Staying informed about emerging standards and protocols</li>
-          </ul>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-2">Preparing for the Future</h2>
           
-          <p className="text-gray-700 mb-4">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
+            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+              Organizations should prepare for the evolving GNSS landscape by taking strategic steps:
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Technology Investment</h3>
+                <ul className="text-gray-700 space-y-2">
+                  <li>• Multi-constellation, multi-frequency receivers</li>
+                  <li>• Advanced processing techniques</li>
+                  <li>• Infrastructure upgrades and modernization</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Strategic Planning</h3>
+                <ul className="text-gray-700 space-y-2">
+                  <li>• Explore new applications and markets</li>
+                  <li>• Build technology partnerships</li>
+                  <li>• Stay informed about emerging standards</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <p className="text-gray-700 mt-6 text-lg leading-relaxed">
             The future of GNSS and RTK technology promises unprecedented accuracy, reliability, and new applications 
             that will transform how we navigate, map, and interact with our world.
           </p>
         </section>
 
-        <Card className="bg-blue-50 border-blue-200 mt-8">
-          <CardContent className="p-6">
-            <h3 className="font-semibold text-blue-800 mb-2">Stay Ahead of the Curve</h3>
-            <p className="text-blue-700 mb-4">
+        <Card className="bg-gray-50 border border-gray-200 mt-8">
+          <CardContent className="p-8 text-center">
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">Stay Ahead of the Curve</h3>
+            <p className="text-gray-700 mb-6 text-lg">
               Connect with forward-thinking RTK service providers who are already implementing next-generation technologies.
             </p>
             <Link to="/directory">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 text-lg">
                 Find Advanced Providers
               </Button>
             </Link>
