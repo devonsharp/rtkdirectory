@@ -38,14 +38,14 @@ const BlogPost3 = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Understanding the Fundamentals</h2>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <Card className="border-blue-200 bg-blue-50">
+            <Card className="border-green-200 bg-green-50">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">Real-Time Kinematic (RTK)</h3>
-                <p className="text-blue-700 mb-4">
+                <h3 className="text-xl font-semibold text-green-800 mb-3">Real-Time Kinematic (RTK)</h3>
+                <p className="text-green-700 mb-4">
                   RTK provides real-time positioning corrections, delivering centimeter-level accuracy instantly. 
                   Corrections are transmitted from reference stations to your receiver via radio, cellular, or internet connections.
                 </p>
-                <ul className="text-blue-700 text-sm space-y-1">
+                <ul className="text-green-700 text-sm space-y-1">
                   <li>• Immediate results in the field</li>
                   <li>• Requires real-time communication</li>
                   <li>• Ideal for surveying and construction</li>
@@ -53,14 +53,14 @@ const BlogPost3 = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-green-200 bg-green-50">
+            <Card className="border-blue-200 bg-blue-50">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-green-800 mb-3">Post-Processed Kinematic (PPK)</h3>
-                <p className="text-green-700 mb-4">
+                <h3 className="text-xl font-semibold text-blue-800 mb-3">Post-Processed Kinematic (PPK)</h3>
+                <p className="text-blue-700 mb-4">
                   PPK processes raw GNSS data after collection, applying corrections during post-processing to achieve 
                   high accuracy. No real-time communication is required during data collection.
                 </p>
-                <ul className="text-green-700 text-sm space-y-1">
+                <ul className="text-blue-700 text-sm space-y-1">
                   <li>• Process data after collection</li>
                   <li>• No communication required in field</li>
                   <li>• Perfect for drone mapping and remote areas</li>
@@ -78,45 +78,45 @@ const BlogPost3 = () => {
               <TableHeader>
                 <TableRow>
                   <TableHead className="font-semibold">Aspect</TableHead>
-                  <TableHead className="font-semibold text-blue-700">RTK</TableHead>
-                  <TableHead className="font-semibold text-green-700">PPK</TableHead>
+                  <TableHead className="font-semibold text-green-700">RTK</TableHead>
+                  <TableHead className="font-semibold text-blue-700">PPK</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow>
                   <TableCell className="font-medium">Processing Time</TableCell>
-                  <TableCell className="text-blue-700">Real-time</TableCell>
-                  <TableCell className="text-green-700">Post-processing required</TableCell>
+                  <TableCell className="text-green-700">Real-time</TableCell>
+                  <TableCell className="text-blue-700">Post-processing required</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Communication</TableCell>
-                  <TableCell className="text-blue-700">Required during collection</TableCell>
-                  <TableCell className="text-green-700">Not required in field</TableCell>
+                  <TableCell className="text-green-700">Required during collection</TableCell>
+                  <TableCell className="text-blue-700">Not required in field</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Accuracy</TableCell>
-                  <TableCell className="text-blue-700">1-3 cm horizontal</TableCell>
                   <TableCell className="text-green-700">1-3 cm horizontal</TableCell>
+                  <TableCell className="text-blue-700">1-3 cm horizontal</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Remote Areas</TableCell>
-                  <TableCell className="text-blue-700">Limited by coverage</TableCell>
-                  <TableCell className="text-green-700">Works anywhere</TableCell>
+                  <TableCell className="text-green-700">Limited by coverage</TableCell>
+                  <TableCell className="text-blue-700">Works anywhere</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Field Verification</TableCell>
-                  <TableCell className="text-blue-700">Immediate</TableCell>
-                  <TableCell className="text-green-700">Delayed</TableCell>
+                  <TableCell className="text-green-700">Immediate</TableCell>
+                  <TableCell className="text-blue-700">Delayed</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Equipment Cost</TableCell>
-                  <TableCell className="text-blue-700">Higher (communication)</TableCell>
-                  <TableCell className="text-green-700">Lower (basic receiver)</TableCell>
+                  <TableCell className="text-green-700">Higher (communication)</TableCell>
+                  <TableCell className="text-blue-700">Lower (basic receiver)</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Workflow Complexity</TableCell>
-                  <TableCell className="text-blue-700">Simple</TableCell>
-                  <TableCell className="text-green-700">More complex</TableCell>
+                  <TableCell className="text-green-700">Simple</TableCell>
+                  <TableCell className="text-blue-700">More complex</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -126,9 +126,9 @@ const BlogPost3 = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">When to Choose RTK</h2>
           
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-            <h3 className="font-semibold text-blue-800 mb-3">RTK is ideal for:</h3>
-            <ul className="text-blue-700 space-y-2">
+          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+            <h3 className="font-semibold text-green-800 mb-3">RTK is ideal for:</h3>
+            <ul className="text-green-700 space-y-2">
               <li><strong>Surveying and Layout:</strong> When you need immediate positioning for stakeout and verification</li>
               <li><strong>Construction:</strong> Machine control systems requiring real-time guidance</li>
               <li><strong>Interactive Mapping:</strong> Applications where immediate feedback is crucial</li>
@@ -165,9 +165,9 @@ const BlogPost3 = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">When to Choose PPK</h2>
           
-          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-            <h3 className="font-semibold text-green-800 mb-3">PPK is ideal for:</h3>
-            <ul className="text-green-700 space-y-2">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+            <h3 className="font-semibold text-blue-800 mb-3">PPK is ideal for:</h3>
+            <ul className="text-blue-700 space-y-2">
               <li><strong>Drone Mapping:</strong> Aerial surveys where post-processing is standard workflow</li>
               <li><strong>Remote Areas:</strong> Locations without reliable communication infrastructure</li>
               <li><strong>Large Area Mapping:</strong> Extensive surveys where post-processing is more efficient</li>
