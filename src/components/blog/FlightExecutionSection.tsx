@@ -1,6 +1,4 @@
 
-import { Card, CardContent } from "@/components/ui/card";
-
 const FlightExecutionSection = () => {
   return (
     <section className="mb-8">
@@ -30,25 +28,23 @@ const FlightExecutionSection = () => {
         </div>
       </div>
 
-      <Card className="border-gray-200 bg-white">
-        <CardContent className="p-6">
-          <h3 className="font-semibold text-gray-900 mb-3">Optimal Flight Parameters</h3>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div>
-              <h4 className="font-medium text-gray-700 mb-2">Altitude</h4>
-              <p className="text-gray-700 text-sm">Maintain consistent AGL height, typically 80-120m for mapping missions</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-gray-700 mb-2">Speed</h4>
-              <p className="text-gray-700 text-sm">Fly at 8-12 m/s for optimal image quality and overlap</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-gray-700 mb-2">Overlap</h4>
-              <p className="text-gray-700 text-sm">Maintain 80% forward, 60% side overlap minimum</p>
-            </div>
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold text-gray-900 mb-3">Optimal Flight Parameters</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div>
+            <h4 className="font-medium text-gray-900 mb-2">Altitude</h4>
+            <p className="text-gray-700">Maintain consistent AGL height, typically 80-120m for mapping missions</p>
           </div>
-        </CardContent>
-      </Card>
+          <div>
+            <h4 className="font-medium text-gray-900 mb-2">Speed</h4>
+            <p className="text-gray-700">Fly at 8-12 m/s for optimal image quality and overlap</p>
+          </div>
+          <div>
+            <h4 className="font-medium text-gray-900 mb-2">Overlap</h4>
+            <p className="text-gray-700">Maintain 80% forward, 60% side overlap minimum</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
