@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Toggle } from "@/components/ui/toggle";
 import { Grid3X3, List } from "lucide-react";
@@ -8,9 +7,9 @@ import RegionBrowser from "@/components/RegionBrowser";
 import ListingsTable from "@/components/ListingsTable";
 import DirectoryCTA from "@/components/DirectoryCTA";
 import FeaturedServiceCard from "@/components/FeaturedServiceCard";
+import FeaturedServicesBanner from "@/components/FeaturedServicesBanner";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-// Enhanced sample data with new fields
 const sampleListings = [
   {
     id: 4,
@@ -123,6 +122,8 @@ const DirectoryPage = () => {
 
       <RegionBrowser />
 
+      <FeaturedServicesBanner />
+
       {/* Listings */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-6">
@@ -160,38 +161,6 @@ const DirectoryPage = () => {
           <ListingsTable listings={filteredListings} />
         )}
       </div>
-
-      {/* Featured Service Provider */}
-      <section className="mb-12">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Featured RTK Correction Provider
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our highlighted RTK correction service provider offering 
-            exceptional coverage and reliability worldwide.
-          </p>
-        </div>
-        <div className="max-w-4xl mx-auto">
-          <Carousel 
-            className="w-full"
-            opts={{
-              loop: true
-            }}
-          >
-            <CarouselContent>
-              <CarouselItem>
-                <FeaturedServiceCard />
-              </CarouselItem>
-              <CarouselItem>
-                <FeaturedServiceCard isSecondCard={true} />
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-      </section>
 
       <DirectoryCTA />
     </div>
