@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Toggle } from "@/components/ui/toggle";
 import { Grid3X3, List } from "lucide-react";
@@ -122,8 +123,6 @@ const DirectoryPage = () => {
 
       <RegionBrowser />
 
-      <FeaturedServicesBanner />
-
       {/* Listings */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-6">
@@ -161,6 +160,8 @@ const DirectoryPage = () => {
           <ListingsTable listings={filteredListings} />
         )}
       </div>
+
+      <FeaturedServicesBanner />
 
       <DirectoryCTA />
     </div>

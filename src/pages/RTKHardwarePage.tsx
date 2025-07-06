@@ -1,3 +1,4 @@
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ExternalLink } from "lucide-react";
 import FeaturedHardwareBanner from "@/components/FeaturedHardwareBanner";
@@ -110,8 +111,6 @@ const RTKHardwarePage = () => {
             from base stations to rover receivers for precise positioning.
           </p>
         </div>
-
-        <FeaturedHardwareBanner />
 
         {/* RTK Base Stations Section */}
         <div className="mb-12">
@@ -244,6 +243,8 @@ const RTKHardwarePage = () => {
             </div>
           </div>
         </div>
+
+        <FeaturedHardwareBanner />
       </div>
     </div>
   );
