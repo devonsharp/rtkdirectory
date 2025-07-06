@@ -29,7 +29,7 @@ const HomePage = () => {
             <span className="text-blue-600"> Worldwide</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            RTKDirectory.com is the global directory connecting surveyors, drone operators, 
+            RTKDirectory is the global directory connecting surveyors, drone operators, 
             and GNSS users with trusted RTK correction service providers worldwide.
           </p>
           <Link to="/rtk-service-providers">
