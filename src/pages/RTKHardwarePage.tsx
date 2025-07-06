@@ -1,11 +1,16 @@
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Star } from "lucide-react";
 import FeaturedHardwareBanner from "@/components/FeaturedHardwareBanner";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import FeaturedHardwareCard from "@/components/FeaturedHardwareCard";
 
 const RTKHardwarePage = () => {
+  // Featured manufacturers/models
+  const featuredBaseStations = ["Trimble", "Leica Geosystems"];
+  const featuredRovers = ["Trimble", "Leica Geosystems", "Emlid"];
+  const featuredBoards = ["Emlid", "u-blox", "ArduSimple"];
+
   const baseStations = [
     {
       country: "United States",
@@ -132,24 +137,35 @@ const RTKHardwarePage = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {baseStations.map((station, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{station.country}</TableCell>
-                      <TableCell className="font-medium">{station.manufacturer}</TableCell>
-                      <TableCell>{station.model}</TableCell>
-                      <TableCell>
-                        <a 
-                          href={station.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center text-blue-600 hover:text-blue-800"
-                        >
-                          Visit Website
-                          <ExternalLink className="h-4 w-4 ml-1" />
-                        </a>
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                  {baseStations.map((station, index) => {
+                    const isFeatured = featuredBaseStations.includes(station.manufacturer);
+                    
+                    return (
+                      <TableRow key={index}>
+                        <TableCell>{station.country}</TableCell>
+                        <TableCell className="font-medium">
+                          <div className="flex items-center gap-2">
+                            {station.manufacturer}
+                            {isFeatured && (
+                              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                            )}
+                          </div>
+                        </TableCell>
+                        <TableCell>{station.model}</TableCell>
+                        <TableCell>
+                          <a 
+                            href={station.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-blue-600 hover:text-blue-800"
+                          >
+                            Visit Website
+                            <ExternalLink className="h-4 w-4 ml-1" />
+                          </a>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </div>
@@ -176,24 +192,35 @@ const RTKHardwarePage = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {rovers.map((rover, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{rover.country}</TableCell>
-                      <TableCell className="font-medium">{rover.manufacturer}</TableCell>
-                      <TableCell>{rover.model}</TableCell>
-                      <TableCell>
-                        <a 
-                          href={rover.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center text-blue-600 hover:text-blue-800"
-                        >
-                          Visit Website
-                          <ExternalLink className="h-4 w-4 ml-1" />
-                        </a>
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                  {rovers.map((rover, index) => {
+                    const isFeatured = featuredRovers.includes(rover.manufacturer);
+                    
+                    return (
+                      <TableRow key={index}>
+                        <TableCell>{rover.country}</TableCell>
+                        <TableCell className="font-medium">
+                          <div className="flex items-center gap-2">
+                            {rover.manufacturer}
+                            {isFeatured && (
+                              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                            )}
+                          </div>
+                        </TableCell>
+                        <TableCell>{rover.model}</TableCell>
+                        <TableCell>
+                          <a 
+                            href={rover.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-blue-600 hover:text-blue-800"
+                          >
+                            Visit Website
+                            <ExternalLink className="h-4 w-4 ml-1" />
+                          </a>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </div>
@@ -220,24 +247,35 @@ const RTKHardwarePage = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {rtkBoards.map((board, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{board.country}</TableCell>
-                      <TableCell className="font-medium">{board.manufacturer}</TableCell>
-                      <TableCell>{board.model}</TableCell>
-                      <TableCell>
-                        <a 
-                          href={board.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center text-blue-600 hover:text-blue-800"
-                        >
-                          Visit Website
-                          <ExternalLink className="h-4 w-4 ml-1" />
-                        </a>
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                  {rtkBoards.map((board, index) => {
+                    const isFeatured = featuredBoards.includes(board.manufacturer);
+                    
+                    return (
+                      <TableRow key={index}>
+                        <TableCell>{board.country}</TableCell>
+                        <TableCell className="font-medium">
+                          <div className="flex items-center gap-2">
+                            {board.manufacturer}
+                            {isFeatured && (
+                              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                            )}
+                          </div>
+                        </TableCell>
+                        <TableCell>{board.model}</TableCell>
+                        <TableCell>
+                          <a 
+                            href={board.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-blue-600 hover:text-blue-800"
+                          >
+                            Visit Website
+                            <ExternalLink className="h-4 w-4 ml-1" />
+                          </a>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </div>

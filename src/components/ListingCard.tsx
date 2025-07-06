@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Mail, Globe, Map, Gift, Info } from "lucide-react";
+import { MapPin, Mail, Globe, Map, Gift, Info, Star } from "lucide-react";
 
 interface Listing {
   id: number;
@@ -25,13 +25,22 @@ interface ListingCardProps {
 }
 
 const ListingCard = ({ listing }: ListingCardProps) => {
+  // Featured providers (based on IDs from sample data)
+  const featuredProviderIds = [1, 4]; // PrecisionRTK Solutions and GlobalRTK Pro
+  const isFeatured = featuredProviderIds.includes(listing.id);
+
   return (
     <Card className="h-full border-gray-200 hover:shadow-lg transition-shadow">
       <CardHeader className="pb-4">
         <div className="flex items-start justify-between">
-          <CardTitle className="text-xl text-gray-900 leading-tight">
-            {listing.name}
-          </CardTitle>
+          <div className="flex items-center gap-2">
+            <CardTitle className="text-xl text-gray-900 leading-tight">
+              {listing.name}
+            </CardTitle>
+            {isFeatured && (
+              <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
+            )}
+          </div>
           <Badge 
             variant="secondary"
             className="bg-gray-100 text-gray-800"

@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Mail, Globe, Map, Gift, ExternalLink } from "lucide-react";
+import { Mail, Globe, Map, Gift, ExternalLink, Star } from "lucide-react";
 
 interface Listing {
   id: number;
@@ -26,6 +25,9 @@ interface ListingsTableProps {
 }
 
 const ListingsTable = ({ listings }: ListingsTableProps) => {
+  // Featured providers (based on IDs from sample data)
+  const featuredProviderIds = [1, 4]; // PrecisionRTK Solutions and GlobalRTK Pro
+
   return (
     <div className="border rounded-lg overflow-hidden">
       <Table>
@@ -42,84 +44,93 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {listings.map((listing) => (
-            <TableRow key={listing.id}>
-              <TableCell>
-                <div className="text-sm">
-                  <div>{listing.country}</div>
-                </div>
-              </TableCell>
-              <TableCell>
-                <div>
-                  <div className="font-medium text-gray-900">{listing.company}</div>
-                </div>
-              </TableCell>
-              <TableCell>
-                <div className="font-medium">{listing.name}</div>
-              </TableCell>
-              <TableCell>
-                <Badge 
-                  variant="secondary"
-                  className="bg-gray-100 text-gray-800"
-                >
-                  {listing.pricing === "free" ? "Free" : "Paid"}
-                </Badge>
-              </TableCell>
-              <TableCell>
-                <a 
-                  href={listing.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
-                >
-                  <Globe className="h-3 w-3 mr-1" />
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              </TableCell>
-              <TableCell>
-                <a 
-                  href={listing.coverageMapLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
-                >
-                  <Map className="h-3 w-3 mr-1" />
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              </TableCell>
-              <TableCell>
-                <a 
-                  href={`mailto:${listing.email}`}
-                  className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
-                >
-                  <Mail className="h-3 w-3 mr-1" />
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              </TableCell>
-              <TableCell>
-                <div className="flex flex-col gap-1">
-                  <Button 
-                    size="sm" 
-                    className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-2 py-1 h-7"
-                    onClick={() => window.open(`mailto:${listing.email}`, '_blank')}
+          {listings.map((listing) => {
+            const isFeatured = featuredProviderIds.includes(listing.id);
+            
+            return (
+              <TableRow key={listing.id}>
+                <TableCell>
+                  <div className="text-sm">
+                    <div>{listing.country}</div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div>
+                    <div className="font-medium text-gray-900">{listing.company}</div>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="flex items-center gap-2">
+                    <div className="font-medium">{listing.name}</div>
+                    {isFeatured && (
+                      <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                    )}
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <Badge 
+                    variant="secondary"
+                    className="bg-gray-100 text-gray-800"
                   >
-                    Contact
-                  </Button>
-                  {listing.freeTrialLink && (
+                    {listing.pricing === "free" ? "Free" : "Paid"}
+                  </Badge>
+                </TableCell>
+                <TableCell>
+                  <a 
+                    href={listing.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
+                  >
+                    <Globe className="h-3 w-3 mr-1" />
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </TableCell>
+                <TableCell>
+                  <a 
+                    href={listing.coverageMapLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
+                  >
+                    <Map className="h-3 w-3 mr-1" />
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </TableCell>
+                <TableCell>
+                  <a 
+                    href={`mailto:${listing.email}`}
+                    className="flex items-center text-blue-600 hover:text-blue-800 text-sm"
+                  >
+                    <Mail className="h-3 w-3 mr-1" />
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </TableCell>
+                <TableCell>
+                  <div className="flex flex-col gap-1">
                     <Button 
                       size="sm" 
-                      variant="outline"
-                      className="text-green-600 border-green-600 hover:bg-green-50 text-xs px-2 py-1 h-7"
-                      onClick={() => window.open(listing.freeTrialLink!, '_blank')}
+                      className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-2 py-1 h-7"
+                      onClick={() => window.open(`mailto:${listing.email}`, '_blank')}
                     >
-                      <Gift className="h-3 w-3 mr-1" />
-                      Trial
+                      Contact
                     </Button>
-                  )}
-                </div>
-              </TableCell>
-            </TableRow>
-          ))}
+                    {listing.freeTrialLink && (
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="text-green-600 border-green-600 hover:bg-green-50 text-xs px-2 py-1 h-7"
+                        onClick={() => window.open(listing.freeTrialLink!, '_blank')}
+                      >
+                        <Gift className="h-3 w-3 mr-1" />
+                        Trial
+                      </Button>
+                    )}
+                  </div>
+                </TableCell>
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </div>

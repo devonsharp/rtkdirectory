@@ -1,7 +1,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MapPin, Mail, Globe, Map, Gift, Info } from "lucide-react";
+import { MapPin, Mail, Globe, Map, Gift, Info, Star } from "lucide-react";
 
 interface Listing {
   id: number;
@@ -24,13 +24,22 @@ interface ListingRowProps {
 }
 
 const ListingRow = ({ listing }: ListingRowProps) => {
+  // Featured providers (based on IDs from sample data)
+  const featuredProviderIds = [1, 4]; // PrecisionRTK Solutions and GlobalRTK Pro
+  const isFeatured = featuredProviderIds.includes(listing.id);
+
   return (
     <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow bg-white">
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
         <div className="flex-1">
           <div className="flex items-start justify-between mb-2">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900">{listing.name}</h3>
+              <div className="flex items-center gap-2">
+                <h3 className="text-lg font-semibold text-gray-900">{listing.name}</h3>
+                {isFeatured && (
+                  <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                )}
+              </div>
               <div className="flex items-center text-sm text-gray-600 mt-1">
                 <MapPin className="h-3 w-3 mr-1" />
                 <span>{listing.region} • {listing.country}</span>
