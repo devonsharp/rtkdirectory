@@ -93,7 +93,7 @@ const BlogPost2 = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Questions to Ask Providers</h2>
           
           <div className="space-y-6">
-            <div className="border-l-4 border-l-blue-500 pl-4">
+            <div>
               <h3 className="font-semibold text-gray-900 mb-2">Service Reliability</h3>
               <ul className="text-gray-700 space-y-1">
                 <li>• What is your guaranteed uptime percentage?</li>
@@ -102,7 +102,7 @@ const BlogPost2 = () => {
               </ul>
             </div>
 
-            <div className="border-l-4 border-l-green-500 pl-4">
+            <div>
               <h3 className="font-semibold text-gray-900 mb-2">Technical Support</h3>
               <ul className="text-gray-700 space-y-1">
                 <li>• What support hours do you offer?</li>
@@ -111,7 +111,7 @@ const BlogPost2 = () => {
               </ul>
             </div>
 
-            <div className="border-l-4 border-l-orange-500 pl-4">
+            <div>
               <h3 className="font-semibold text-gray-900 mb-2">Pricing and Contracts</h3>
               <ul className="text-gray-700 space-y-1">
                 <li>• What are your subscription options and pricing tiers?</li>
@@ -120,7 +120,7 @@ const BlogPost2 = () => {
               </ul>
             </div>
 
-            <div className="border-l-4 border-l-purple-500 pl-4">
+            <div>
               <h3 className="font-semibold text-gray-900 mb-2">Future-Proofing</h3>
               <ul className="text-gray-700 space-y-1">
                 <li>• How do you handle technology upgrades?</li>
