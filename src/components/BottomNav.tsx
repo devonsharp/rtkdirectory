@@ -5,19 +5,6 @@ const BottomNav = () => {
   return (
     <nav className="bg-white border-t border-gray-200 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Message Section */}
-        <div className="py-6 text-center border-b border-gray-100">
-          <p className="text-gray-600 mb-2">
-            <Link to="/" className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
-              RTKDirectory
-            </Link>
-            {" "}— Connecting you to trusted RTK correction service providers near you
-          </p>
-          <p className="text-sm text-gray-500">
-            Contact us: contact@rtkdirectory.com
-          </p>
-        </div>
-
         <div className="py-6">
           {/* Navigation Links organized in columns */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
@@ -93,6 +80,19 @@ const BottomNav = () => {
             </div>
 
           </div>
+        </div>
+
+        {/* Header Message Section - moved below navigation links */}
+        <div className="py-6 text-center border-t border-gray-100">
+          <p className="text-gray-600 mb-2">
+            <Link to="/" className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
+              RTKDirectory
+            </Link>
+            {" "}— Connecting you to trusted RTK correction service providers near you
+          </p>
+          <p className="text-sm text-gray-500">
+            Contact us: contact@rtkdirectory.com
+          </p>
         </div>
       </div>
     </nav>
