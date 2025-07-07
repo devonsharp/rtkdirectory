@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { Home, Search, Book, HardwareIcon as Hardware, MessageCircle } from "lucide-react";
+import { Home, Search, Book, Wrench, MessageCircle } from "lucide-react";
 
 const BottomNav = () => {
   const location = useLocation();
@@ -19,7 +19,7 @@ const BottomNav = () => {
     },
     {
       path: "/rtk-hardware",
-      icon: Hardware,
+      icon: Wrench,
       label: "Hardware"
     },
     {
