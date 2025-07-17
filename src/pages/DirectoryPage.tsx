@@ -3,13 +3,10 @@ import { useState } from "react";
 import { Toggle } from "@/components/ui/toggle";
 import { Grid3X3, List } from "lucide-react";
 import ListingCard from "@/components/ListingCard";
-import DirectorySearch from "@/components/DirectorySearch";
 import RegionBrowser from "@/components/RegionBrowser";
 import ListingsTable from "@/components/ListingsTable";
 import DirectoryCTA from "@/components/DirectoryCTA";
-import FeaturedServiceCard from "@/components/FeaturedServiceCard";
 import FeaturedServicesBanner from "@/components/FeaturedServicesBanner";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const sampleListings = [
   {
@@ -79,24 +76,7 @@ const sampleListings = [
 ];
 
 const DirectoryPage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [pricingFilter, setPricingFilter] = useState("all");
-  const [regionFilter, setRegionFilter] = useState("all");
-  const [countryFilter, setCountryFilter] = useState("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("list");
-  
-  const filteredListings = sampleListings.filter(listing => {
-    const matchesSearch = listing.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      listing.region.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      listing.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      listing.description.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesPricing = pricingFilter === "all" || listing.pricing === pricingFilter;
-    const matchesRegion = regionFilter === "all" || listing.continent === regionFilter;
-    const matchesCountry = countryFilter === "all" || listing.country === countryFilter;
-    
-    return matchesSearch && matchesPricing && matchesRegion && matchesCountry;
-  });
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -110,24 +90,13 @@ const DirectoryPage = () => {
         </p>
       </div>
 
-      <DirectorySearch
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        pricingFilter={pricingFilter}
-        setPricingFilter={setPricingFilter}
-        regionFilter={regionFilter}
-        setRegionFilter={setRegionFilter}
-        countryFilter={countryFilter}
-        setCountryFilter={setCountryFilter}
-      />
-
       <RegionBrowser />
 
       {/* Listings */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-gray-900">
-            RTK Service Providers ({filteredListings.length})
+            All RTK Service Providers ({sampleListings.length})
           </h2>
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-600">View:</span>
@@ -152,12 +121,12 @@ const DirectoryPage = () => {
 
         {viewMode === "grid" ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredListings.map((listing) => (
+            {sampleListings.map((listing) => (
               <ListingCard key={listing.id} listing={listing} />
             ))}
           </div>
         ) : (
-          <ListingsTable listings={filteredListings} />
+          <ListingsTable listings={sampleListings} />
         )}
       </div>
 
