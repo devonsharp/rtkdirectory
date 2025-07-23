@@ -55,7 +55,7 @@ const SubmitListingPage = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Submit Your Listing
+          Request Your Product To Be Listed
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
           Join the world's most comprehensive RTK directory. Whether you provide correction services 
@@ -170,7 +170,7 @@ const SubmitListingPage = () => {
               type="submit" 
               className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
             >
-              Submit Listing
+              Request Listing
             </Button>
           </form>
         </CardContent>
