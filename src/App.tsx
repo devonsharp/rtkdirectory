@@ -22,6 +22,7 @@ import BlogPost3 from "./pages/blog/BlogPost3";
 import BlogPost4 from "./pages/blog/BlogPost4";
 import BlogPost5 from "./pages/blog/BlogPost5";
 import BlogPost6 from "./pages/blog/BlogPost6";
+import CountryRTKPage from "./pages/CountryRTKPage";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/rtk-service-providers" element={<DirectoryPage />} />
               <Route path="/rtk-service-providers/:continent" element={<ContinentDirectory />} />
+              <Route path="/rtk-correction-services-in-:country" element={<CountryRTKPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/submit-listing" element={<SubmitListingPage />} />
               <Route path="/blog" element={<BlogPage />} />
