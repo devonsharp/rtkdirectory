@@ -34,7 +34,7 @@ const CountryRTKPage = () => {
         <title>{data.pageTitle}</title>
         <meta name="description" content={data.metaDescription} />
         <meta name="keywords" content={`RTK, NTRIP, ${data.countryName}, GNSS, correction services, precision agriculture, surveying`} />
-        <link rel="canonical" href={`https://rtkdirectory.com/rtk-correction-services-in-${data.slug}`} />
+        <link rel="canonical" href={`https://rtkdirectory.lovable.app/rtk-correction-services-in-${data.slug}`} />
       </Helmet>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
