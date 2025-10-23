@@ -20,7 +20,7 @@ const BottomNav = () => {
 
         <div className="py-6">
           {/* Navigation Links organized in columns */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
             
             {/* RTK Corrections Providers Column */}
             <div>
@@ -53,12 +53,106 @@ const BottomNav = () => {
               </div>
             </div>
 
-            {/* RTK Hardware Column */}
+            {/* Countries Column */}
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">RTK Hardware</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">Countries</h3>
               <div className="space-y-2">
-                <Link to="/rtk-hardware" className="block text-gray-700 hover:text-blue-600 transition-colors">
-                  RTK Hardware Providers
+                <Link to="/rtk-correction-services-in-austria" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Austria
+                </Link>
+                <Link to="/rtk-correction-services-in-belgium" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Belgium
+                </Link>
+                <Link to="/rtk-correction-services-in-bulgaria" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Bulgaria
+                </Link>
+                <Link to="/rtk-correction-services-in-croatia" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Croatia
+                </Link>
+                <Link to="/rtk-correction-services-in-cyprus" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Cyprus
+                </Link>
+                <Link to="/rtk-correction-services-in-czechia" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Czechia
+                </Link>
+                <Link to="/rtk-correction-services-in-denmark" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Denmark
+                </Link>
+                <Link to="/rtk-correction-services-in-estonia" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Estonia
+                </Link>
+                <Link to="/rtk-correction-services-in-finland" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Finland
+                </Link>
+                <Link to="/rtk-correction-services-in-germany" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Germany
+                </Link>
+                <Link to="/rtk-correction-services-in-greece" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Greece
+                </Link>
+                <Link to="/rtk-correction-services-in-hungary" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Hungary
+                </Link>
+                <Link to="/rtk-correction-services-in-iceland" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Iceland
+                </Link>
+                <Link to="/rtk-correction-services-in-ireland" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Ireland
+                </Link>
+                <Link to="/rtk-correction-services-in-italy" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Italy
+                </Link>
+              </div>
+            </div>
+
+            {/* More Countries Column */}
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-3">&nbsp;</h3>
+              <div className="space-y-2">
+                <Link to="/rtk-correction-services-in-latvia" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Latvia
+                </Link>
+                <Link to="/rtk-correction-services-in-liechtenstein" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Liechtenstein
+                </Link>
+                <Link to="/rtk-correction-services-in-lithuania" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Lithuania
+                </Link>
+                <Link to="/rtk-correction-services-in-luxembourg" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Luxembourg
+                </Link>
+                <Link to="/rtk-correction-services-in-malta" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Malta
+                </Link>
+                <Link to="/rtk-correction-services-in-netherlands" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Netherlands
+                </Link>
+                <Link to="/rtk-correction-services-in-norway" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Norway
+                </Link>
+                <Link to="/rtk-correction-services-in-poland" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Poland
+                </Link>
+                <Link to="/rtk-correction-services-in-portugal" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Portugal
+                </Link>
+                <Link to="/rtk-correction-services-in-romania" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Romania
+                </Link>
+                <Link to="/rtk-correction-services-in-slovakia" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Slovakia
+                </Link>
+                <Link to="/rtk-correction-services-in-slovenia" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Slovenia
+                </Link>
+                <Link to="/rtk-correction-services-in-spain" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Spain
+                </Link>
+                <Link to="/rtk-correction-services-in-switzerland" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  Switzerland
+                </Link>
+                <Link to="/rtk-correction-services-in-united-kingdom" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  United Kingdom
                 </Link>
               </div>
             </div>
@@ -67,6 +161,9 @@ const BottomNav = () => {
             <div>
               <h3 className="font-semibold text-gray-900 mb-3">Resources</h3>
               <div className="space-y-2">
+                <Link to="/rtk-hardware" className="block text-gray-700 hover:text-blue-600 transition-colors">
+                  RTK Hardware
+                </Link>
                 <Link to="/knowledge-base" className="block text-gray-700 hover:text-blue-600 transition-colors">
                   Knowledge Base
                 </Link>
