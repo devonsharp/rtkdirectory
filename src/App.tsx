@@ -39,7 +39,7 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/rtk-service-providers" element={<DirectoryPage />} />
               <Route path="/rtk-service-providers/:continent" element={<ContinentDirectory />} />
-              <Route path="/rtk-correction-services-in-:country" element={<CountryRTKPage />} />
+              <Route path="/rtk-correction-services/:country" element={<CountryRTKPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/submit-listing" element={<SubmitListingPage />} />
               <Route path="/blog" element={<BlogPage />} />

@@ -16,7 +16,12 @@ import { Badge } from "@/components/ui/badge";
 const CountryRTKPage = () => {
   const { country } = useParams<{ country: string }>();
   
+  console.log("CountryRTKPage - country param:", country);
+  console.log("Available countries:", Object.keys(countryRTKData));
+  console.log("Country data exists:", country ? !!countryRTKData[country] : false);
+  
   if (!country || !countryRTKData[country]) {
+    console.log("Navigating to 404 - country not found");
     return <Navigate to="/404" replace />;
   }
 
@@ -34,7 +39,7 @@ const CountryRTKPage = () => {
         <title>{data.pageTitle}</title>
         <meta name="description" content={data.metaDescription} />
         <meta name="keywords" content={`RTK, NTRIP, ${data.countryName}, GNSS, correction services, precision agriculture, surveying`} />
-        <link rel="canonical" href={`https://rtkdirectory.lovable.app/rtk-correction-services-in-${data.slug}`} />
+        <link rel="canonical" href={`https://rtkdirectory.lovable.app/rtk-correction-services/${data.slug}`} />
       </Helmet>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
